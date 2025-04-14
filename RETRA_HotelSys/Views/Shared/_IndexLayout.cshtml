@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RETRA_HotelSys</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RETRA_HotelSys.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    @RenderSection("Styles", required: false)
+
+</head>
+<body>
+    <header id="mainHeader">
+        <nav>
+            <div class="nav-container">
+                <div class="nav-left">
+                    <a href="#" class="nav-link">OUR ROOMS</a>
+                    <a href="#" class="nav-link">CITIZENS</a>
+
+                    <div class="dropdown">
+                        <a href="#" class="nav-link">ABOUT</a>
+                        <div class="dropdown-content">
+                            <a href="#" class="dropdown-item">REVIEWS</a>
+                            <a href="#" class="dropdown-item">HOTEL AREAS</a>
+                            <a href="#" class="dropdown-item">EVENTS & SEMINAR</a>
+                            <a href="#" class="dropdown-item">CAREERS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-brand">
+                    <img src="~/images/5.png" alt="Maximilian Hotel Logo">
+                </div>
+
+                <div class="nav-right">
+                    <a href="#" class="nav-link">GUSTO RISKANSMIT</a>
+                    <a asp-controller="Guest" asp-action="Login" class="nav-link"><i class="fas fa-user"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer>
+        &copy; @DateTime.Now.Year RETRA Hotel. All rights reserved.
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/index.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

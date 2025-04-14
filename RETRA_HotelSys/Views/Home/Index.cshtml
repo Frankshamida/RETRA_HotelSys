@@ -1,0 +1,104 @@
+﻿@{
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+    ViewData["Title"] = "Homepage";
+}
+
+<!-- Elegant Booking DIV -->
+<div class="elegant-booking-section">
+    <div class="luxury-booking-container">
+        <div class="luxury-booking-form">
+            <div class="form-header">
+                <h2><span class="gold-line"></span>Reservation Details<span class="gold-line"></span></h2>
+                <p class="subtitle">Your luxurious experience begins here</p>
+            </div>
+
+            <form asp-action="CheckAvailability" asp-controller="Home" method="post" class="animated-form">
+                <div class="form-grid">
+                    <!-- Arrival Date -->
+                    <div class="form-group animate-fade-in" style="--delay: 0.1s">
+                        <label>
+                            <span class="label-text">CHECKIN DATE</span>
+                        </label>
+                        <div class="input-container">
+                            <input type="date" name="checkInDate" required class="date-input">
+                            <div class="input-icon"><i class="far fa-calendar"></i></div>
+                            <div class="underline"></div>
+                        </div>
+                    </div>
+
+                    <!-- Adults -->
+                    <div class="form-group animate-fade-in" style="--delay: 0.2s">
+                        <label>
+                            <span class="label-text">ADULTS</span>
+                        </label>
+                        <div class="custom-select">
+                            <div class="input-icon"><i class="fas fa-user"></i></div>
+                            <select name="numberOfAdults" required>
+                                <option value="1">1 Adult</option>
+                                <option value="2">2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                            </select>
+                            <div class="select-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Departure Date -->
+                    <div class="form-group animate-fade-in" style="--delay: 0.3s">
+                        <label>
+                            <span class="label-text">CHECKOUT DATE</span>
+                        </label>
+                        <div class="input-container">
+                            <input type="date" name="checkOutDate" required class="date-input">
+                            <div class="input-icon"><i class="far fa-calendar"></i></div>
+                            <div class="underline"></div>
+                        </div>
+                    </div>
+
+                    <!-- Children -->
+                    <div class="form-group animate-fade-in" style="--delay: 0.4s">
+                        <label>
+                            <span class="label-text">CHILDREN</span>
+                        </label>
+                        <div class="custom-select">
+                            <div class="input-icon"><i class="fas fa-child"></i></div>
+                            <select name="numberOfChildren">
+                                <option value="0">None</option>
+                                <option value="1">1 Child</option>
+                                <option value="2">2 Children</option>
+                            </select>
+                            <div class="select-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <p class="form-note">Additional Materials and Products available</p>
+                    </div>
+                </div>
+
+                <div class="form-footer animate-fade-in" style="--delay: 0.6s">
+                    <button type="submit" class="luxury-btn">
+                        <span>Check Availability</span>
+                        <div class="btn-arrow">
+                            <div class="arrow-line"></div>
+                            <div class="arrow-head"></div>
+                        </div>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="about-section">
+    <div class="container">
+        <h2>About Our Hotel</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hotel RETRA offers world-class hospitality with a perfect blend of modern amenities and traditional warmth. Our management system ensures seamless operations across all departments.</p>
+                <p>This project was developed by our talented team of professionals, dedicated to creating the perfect hotel management solution.</p>
+            </div>
+            <div class="about-image">
+                <img src="~/images/lobby.jpg" alt="Hotel RETRA Lobby">
+            </div>
+        </div>
+    </div>
+</div>
+

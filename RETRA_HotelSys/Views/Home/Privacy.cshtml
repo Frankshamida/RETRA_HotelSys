@@ -1,0 +1,444 @@
+﻿@{
+    ViewData["Title"] = "Welcome to Hotel RETRA";
+}
+
+@if (User.Identity.IsAuthenticated && User.FindFirst("UserType")?.Value == "Guest")
+{
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome back, @User.Identity.Name!</h1>
+            <p class="hero-text">Manage your reservations and enjoy your stay at Hotel RETRA</p>
+            <div class="hero-buttons">
+                <a asp-controller="GuestReservations" asp-action="Index" class="btn btn-primary">My Reservations</a>
+                <a asp-controller="Guest" asp-action="Profile" class="btn btn-outline">My Profile</a>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Hotel RETRA</h1>
+            <p class="hero-text">Experience luxury redefined at our premier hotel destination</p>
+
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <div class="hero-buttons">
+                    <a asp-controller="Guest" asp-action="Login" class="btn btn-primary">Guest Login</a>
+                    <a asp-controller="Guest" asp-action="Register" class="btn btn-outline">Guest Registration</a>
+                    <a asp-controller="Staff" asp-action="Login" class="btn btn-secondary">Staff Login</a>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+<!-- Elegant Booking Section -->
+<section class="elegant-booking-section">
+    <div class="luxury-booking-container">
+        <div class="luxury-booking-form">
+            <div class="form-header">
+                <h2><span class="gold-line"></span>Reservation Details<span class="gold-line"></span></h2>
+                <p class="subtitle">Your luxurious experience begins here</p>
+            </div>
+
+            <form asp-action="CheckAvailability" asp-controller="Home" method="post" class="animated-form">
+                <div class="form-grid">
+                    <!-- Arrival Date -->
+                    <div class="form-group animate-fade-in" style="--delay: 0.1s">
+                        <label>
+                            <span class="label-text">ARRIVAL DATE</span>
+                        </label>
+                        <div class="input-container">
+                            <input type="date" name="checkInDate" required class="date-input">
+                            <div class="input-icon"><i class="far fa-calendar"></i></div>
+                            <div class="underline"></div>
+                        </div>
+                    </div>
+
+                    <!-- Adults -->
+                    <div class="form-group animate-fade-in" style="--delay: 0.2s">
+                        <label>
+                            <span class="label-text">ADULTS</span>
+                        </label>
+                        <div class="custom-select">
+                            <div class="input-icon"><i class="fas fa-user"></i></div>
+                            <select name="numberOfAdults" required>
+                                <option value="1">1 Adult</option>
+                                <option value="2">2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                            </select>
+                            <div class="select-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Departure Date -->
+                    <div class="form-group animate-fade-in" style="--delay: 0.3s">
+                        <label>
+                            <span class="label-text">DEPARTURE DATE</span>
+                        </label>
+                        <div class="input-container">
+                            <input type="date" name="checkOutDate" required class="date-input">
+                            <div class="input-icon"><i class="far fa-calendar"></i></div>
+                            <div class="underline"></div>
+                        </div>
+                    </div>
+
+                    <!-- Children -->
+                    <div class="form-group animate-fade-in" style="--delay: 0.4s">
+                        <label>
+                            <span class="label-text">CHILDREN</span>
+                        </label>
+                        <div class="custom-select">
+                            <div class="input-icon"><i class="fas fa-child"></i></div>
+                            <select name="numberOfChildren">
+                                <option value="0">None</option>
+                                <option value="1">1 Child</option>
+                                <option value="2">2 Children</option>
+                            </select>
+                            <div class="select-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <p class="form-note">Additional Materials and Products available</p>
+                    </div>
+                </div>
+
+                <div class="form-footer animate-fade-in" style="--delay: 0.6s">
+                    <button type="submit" class="luxury-btn">
+                        <span>Check Availability</span>
+                        <div class="btn-arrow">
+                            <div class="arrow-line"></div>
+                            <div class="arrow-head"></div>
+                        </div>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<div class="about-section">
+    <div class="container">
+        <h2>About Our Hotel</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hotel RETRA offers world-class hospitality with a perfect blend of modern amenities and traditional warmth. Our management system ensures seamless operations across all departments.</p>
+                <p>This project was developed by our talented team of professionals, dedicated to creating the perfect hotel management solution.</p>
+            </div>
+            <div class="about-image">
+                <img src="~/images/lobby.jpg" alt="Hotel RETRA Lobby">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/hotel-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+            .hero-content h1 {
+                font-size: 3.5rem;
+                margin-bottom: 1rem;
+                font-weight: 700;
+            }
+
+        .hero-text {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #4361ee;
+            border: none;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #3a0ca3;
+            border: none;
+        }
+
+        /* Booking Section */
+        .elegant-booking-section {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+
+        .luxury-booking-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .luxury-booking-form {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            margin-top: -100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+            .form-header h2 {
+                font-size: 2rem;
+                color: #333;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+        .gold-line {
+            width: 50px;
+            height: 2px;
+            background-color: #f0a202;
+            display: inline-block;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .label-text {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .input-container {
+            position: relative;
+        }
+
+        .date-input {
+            width: 100%;
+            padding: 0.8rem 1rem 0.8rem 2.5rem;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            font-size: 1rem;
+            background: transparent;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+        .underline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #4361ee;
+            transition: width 0.3s ease;
+        }
+
+        .date-input:focus + .underline {
+            width: 100%;
+        }
+
+        .custom-select {
+            position: relative;
+        }
+
+            .custom-select select {
+                width: 100%;
+                padding: 0.8rem 1rem 0.8rem 2.5rem;
+                border: none;
+                border-bottom: 1px solid #ddd;
+                font-size: 1rem;
+                appearance: none;
+                background: transparent;
+            }
+
+        .select-arrow {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #666;
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .luxury-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+            .luxury-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(58, 12, 163, 0.3);
+            }
+
+        .btn-arrow {
+            display: flex;
+            align-items: center;
+        }
+
+        .arrow-line {
+            width: 20px;
+            height: 2px;
+            background-color: white;
+            position: relative;
+        }
+
+        .arrow-head {
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid white;
+            border-right: 2px solid white;
+            transform: rotate(45deg);
+            position: absolute;
+            right: 0;
+            top: -3px;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+            .about-section h2 {
+                text-align: center;
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+                color: #333;
+            }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animations */
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+            animation-delay: var(--delay);
+        }
+
+        @@keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @@media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .luxury-booking-form {
+                margin-top: -50px;
+            }
+        }
+    </style>
+}

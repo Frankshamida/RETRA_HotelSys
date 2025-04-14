@@ -1,0 +1,857 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\views\\account\\adminaccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\views\\account\\adminaccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\views\\admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\views\\admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\models\\adminaccesscodeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\models\\adminaccesscodeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\views\\shared\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\views\\shared\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Migrations\\20250414021333_AddUserProperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RETRA_HotelSys\\Migrations\\20250414021333_AddUserProperties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\data\\hotelguests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\data\\hotelguests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\models\\adminprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\models\\adminprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\models\\admindashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\models\\admindashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\controllers\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\controllers\\guestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\wwwroot\\css\\admin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\wwwroot\\css\\admin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Migrations\\20250414014640_AddStatusToHOtelRoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RETRA_HotelSys\\Migrations\\20250414014640_AddStatusToHOtelRoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\data\\hotelrooms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\data\\hotelrooms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\views\\guest\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\views\\guest\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\views\\guest\\guesthomepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\views\\guest\\guesthomepage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\views\\shared\\_guesthomepagelayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\views\\shared\\_guesthomepagelayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\data\\staffmembers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\data\\staffmembers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\views\\guest\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\views\\guest\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\models\\guestregistrationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\models\\guestregistrationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\wwwroot\\js\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\wwwroot\\js\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\wwwroot\\js\\guesthomepage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\wwwroot\\js\\guesthomepage.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\data\\staffroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\data\\staffroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\data\\roomtypefeatures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\data\\roomtypefeatures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\data\\roommaintenance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\data\\roommaintenance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\data\\roomfeatures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\data\\roomfeatures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\data\\roomcategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\data\\roomcategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\data\\reservationstatushistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\data\\reservationstatushistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\data\\reservationpayments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\data\\reservationpayments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\data\\guestreservations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\data\\guestreservations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\views\\guest\\mybookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\views\\guest\\mybookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\views\\shared\\_indexlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\views\\shared\\_indexlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\wwwroot\\css\\guesthomepage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\wwwroot\\css\\guesthomepage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Migrations\\20250412182238_initialcreation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RETRA_HotelSys\\Migrations\\20250412182238_initialcreation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|c:\\users\\user\\desktop\\retra_hotelsys\\retra_hotelsys\\migrations\\20250413175546_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36214975-18D6-4F9F-A4D0-318E2B28F6FE}|RETRA_HotelSys\\RETRA_HotelSys.csproj|solutionrelative:retra_hotelsys\\migrations\\20250413175546_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 8,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "RETRA_HotelSys\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAPUAAAAAAAAAAAAgwCEBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T03:09:54.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\appsettings.json",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\appsettings.json",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\appsettings.json",
+              "RelativeToolTip": "RETRA_HotelSys\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-14T02:52:03.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Admin\\Login.cshtml",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Views\\Admin\\Login.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Admin\\Login.cshtml",
+              "RelativeToolTip": "RETRA_HotelSys\\Views\\Admin\\Login.cshtml",
+              "ViewState": "AgIAAPUAAAAAAAAAAAAgwCEBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T18:50:50.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminAccess.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Account\\AdminAccess.cshtml",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Views\\Account\\AdminAccess.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Account\\AdminAccess.cshtml",
+              "RelativeToolTip": "RETRA_HotelSys\\Views\\Account\\AdminAccess.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T02:54:29.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAmwF4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T19:57:51.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Data\\DbInitializer.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\DbInitializer.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Data\\DbInitializer.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAkwGsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T18:04:08.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Views\\Admin\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeToolTip": "RETRA_HotelSys\\Views\\Admin\\Dashboard.cshtml",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAUwMEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T18:45:22.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Program.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Program.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Program.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAwK4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T17:56:12.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "RETRA_HotelSys\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T18:45:54.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AdminAccessCodeViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Models\\AdminAccessCodeViewModel.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Models\\AdminAccessCodeViewModel.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Models\\AdminAccessCodeViewModel.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Models\\AdminAccessCodeViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T02:53:35.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAkwKoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T18:39:59.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "20250414021333_AddUserProperties.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Migrations\\20250414021333_AddUserProperties.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Migrations\\20250414021333_AddUserProperties.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Migrations\\20250414021333_AddUserProperties.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Migrations\\20250414021333_AddUserProperties.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T02:13:34.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Models\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Models\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Models\\LoginViewModel.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Models\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:15:00.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AccessDenied.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Shared\\AccessDenied.cshtml",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Views\\Shared\\AccessDenied.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Shared\\AccessDenied.cshtml",
+              "RelativeToolTip": "RETRA_HotelSys\\Views\\Shared\\AccessDenied.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T02:16:32.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "HotelGuests.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\HotelGuests.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Data\\HotelGuests.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\HotelGuests.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Data\\HotelGuests.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAkwEoAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T17:08:14.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AdminDashboardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Models\\AdminDashboardViewModel.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Models\\AdminDashboardViewModel.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Models\\AdminDashboardViewModel.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Models\\AdminDashboardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T18:43:44.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AdminProfileViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Models\\AdminProfileViewModel.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Models\\AdminProfileViewModel.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Models\\AdminProfileViewModel.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Models\\AdminProfileViewModel.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAewA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T02:01:26.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T02:04:52.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GuestController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Controllers\\GuestController.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Controllers\\GuestController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Controllers\\GuestController.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Controllers\\GuestController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAuwB4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T15:55:59.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "admin.css",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\admin.css",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\wwwroot\\css\\admin.css",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\admin.css",
+              "RelativeToolTip": "RETRA_HotelSys\\wwwroot\\css\\admin.css",
+              "ViewState": "AgIAAEABAAAAAAAAAADwv2MBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-13T18:46:21.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "GuestHomepage.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Guest\\GuestHomepage.cshtml",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Views\\Guest\\GuestHomepage.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Guest\\GuestHomepage.cshtml",
+              "RelativeToolTip": "RETRA_HotelSys\\Views\\Guest\\GuestHomepage.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T16:35:38.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "HotelRooms.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\HotelRooms.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Data\\HotelRooms.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\HotelRooms.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Data\\HotelRooms.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAwwDIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:21:02.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "20250414014640_AddStatusToHOtelRoom.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Migrations\\20250414014640_AddStatusToHOtelRoom.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Migrations\\20250414014640_AddStatusToHOtelRoom.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Migrations\\20250414014640_AddStatusToHOtelRoom.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Migrations\\20250414014640_AddStatusToHOtelRoom.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T01:46:40.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Guest\\Login.cshtml",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Views\\Guest\\Login.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Guest\\Login.cshtml",
+              "RelativeToolTip": "RETRA_HotelSys\\Views\\Guest\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T14:56:31.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAcwAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T17:52:21.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "_GuestHomepageLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Shared\\_GuestHomepageLayout.cshtml",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Views\\Shared\\_GuestHomepageLayout.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Shared\\_GuestHomepageLayout.cshtml",
+              "RelativeToolTip": "RETRA_HotelSys\\Views\\Shared\\_GuestHomepageLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T17:18:22.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "index.js",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\js\\index.js",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\wwwroot\\js\\index.js",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\js\\index.js",
+              "RelativeToolTip": "RETRA_HotelSys\\wwwroot\\js\\index.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-12T15:22:01.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "GuestRegistrationViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Models\\GuestRegistrationViewModel.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Models\\GuestRegistrationViewModel.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Models\\GuestRegistrationViewModel.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Models\\GuestRegistrationViewModel.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAIA8wB4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:13:54.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "StaffMembers.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\StaffMembers.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Data\\StaffMembers.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\StaffMembers.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Data\\StaffMembers.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAcwB8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:43:00.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "guesthomepage.js",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\js\\guesthomepage.js",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\wwwroot\\js\\guesthomepage.js",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\js\\guesthomepage.js",
+              "RelativeToolTip": "RETRA_HotelSys\\wwwroot\\js\\guesthomepage.js",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAADIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-12T17:26:32.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Guest\\Register.cshtml",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Views\\Guest\\Register.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Guest\\Register.cshtml",
+              "RelativeToolTip": "RETRA_HotelSys\\Views\\Guest\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T14:56:24.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "RoomTypeFeatures.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\RoomTypeFeatures.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Data\\RoomTypeFeatures.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\RoomTypeFeatures.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Data\\RoomTypeFeatures.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwBUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:42:52.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "RETRA_HotelSys\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T14:30:16.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "RoomMaintenance.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\RoomMaintenance.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Data\\RoomMaintenance.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\RoomMaintenance.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Data\\RoomMaintenance.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAxwCsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:42:46.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "RoomFeatures.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\RoomFeatures.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Data\\RoomFeatures.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\RoomFeatures.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Data\\RoomFeatures.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAQwBwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:42:42.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "RoomCategories.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\RoomCategories.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Data\\RoomCategories.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\RoomCategories.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Data\\RoomCategories.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:42:37.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ReservationStatusHistory.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\ReservationStatusHistory.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Data\\ReservationStatusHistory.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\ReservationStatusHistory.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Data\\ReservationStatusHistory.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAxwB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:42:32.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "20250413175546_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Migrations\\20250413175546_InitialCreate.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Migrations\\20250413175546_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Migrations\\20250413175546_InitialCreate.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Migrations\\20250413175546_InitialCreate.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:55:46.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "StaffRoles.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\StaffRoles.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Data\\StaffRoles.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\StaffRoles.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Data\\StaffRoles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwBYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:43:05.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "ReservationPayments.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\ReservationPayments.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Data\\ReservationPayments.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\ReservationPayments.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Data\\ReservationPayments.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T17:42:25.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "GuestReservations.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\GuestReservations.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Data\\GuestReservations.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\GuestReservations.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Data\\GuestReservations.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T16:55:56.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T18:10:44.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "MyBookings.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Guest\\MyBookings.cshtml",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Views\\Guest\\MyBookings.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Guest\\MyBookings.cshtml",
+              "RelativeToolTip": "RETRA_HotelSys\\Views\\Guest\\MyBookings.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T19:15:16.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "_IndexLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Shared\\_IndexLayout.cshtml",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Views\\Shared\\_IndexLayout.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Shared\\_IndexLayout.cshtml",
+              "RelativeToolTip": "RETRA_HotelSys\\Views\\Shared\\_IndexLayout.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACcAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T15:25:56.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "guesthomepage.css",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\guesthomepage.css",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\wwwroot\\css\\guesthomepage.css",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\guesthomepage.css",
+              "RelativeToolTip": "RETRA_HotelSys\\wwwroot\\css\\guesthomepage.css",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAwwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-12T17:26:00.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "20250412182238_initialcreation.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Migrations\\20250412182238_initialcreation.cs",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Migrations\\20250412182238_initialcreation.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Migrations\\20250412182238_initialcreation.cs",
+              "RelativeToolTip": "RETRA_HotelSys\\Migrations\\20250412182238_initialcreation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T18:22:39.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "RETRA_HotelSys\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T14:25:32.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "RETRA_HotelSys\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAADkAAAAAAAAAAAAgwEsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-12T14:41:19.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "index.css",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\index.css",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\wwwroot\\css\\index.css",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\index.css",
+              "RelativeToolTip": "RETRA_HotelSys\\wwwroot\\css\\index.css",
+              "ViewState": "AgIAADoAAAAAAAAAAAAcwFcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-12T15:21:08.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "RETRA_HotelSys\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "RETRA_HotelSys\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-12T15:10:11.602Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

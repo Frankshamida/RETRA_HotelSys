@@ -1,0 +1,74 @@
+﻿@model RETRA_HotelSys.Models.LoginViewModel
+
+@{
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+    ViewData["Title"] = "Login";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-modern success" id="tempDataAlert">
+        <i class="fas fa-check-circle"></i> @TempData["SuccessMessage"]
+    </div>
+}
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<div class="login-container">
+    <div class="login-header">
+        <h2>Guest Login</h2>
+        <p>Welcome back to Hotel RETRA</p>
+    </div>
+
+    <form asp-action="Login" method="post" class="login-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger validation-summary"></div>
+
+        <div class="form-group-modern">
+            <label asp-for="Email" class="form-label">Email Address</label>
+            <div class="input-container">
+                <i class="fas fa-envelope input-icon"></i>
+                <input asp-for="Email" class="form-control-modern" placeholder="Enter your email" />
+            </div>
+            <span asp-validation-for="Email" class="text-danger validation-message"></span>
+        </div>
+
+        <div class="form-group-modern">
+            <label asp-for="Password" class="form-label">Password</label>
+            <div class="input-container">
+                <i class="fas fa-lock input-icon"></i>
+                <input asp-for="Password" type="password" class="form-control-modern" placeholder="Enter your password" />
+            </div>
+            <span asp-validation-for="Password" class="text-danger validation-message"></span>
+        </div>
+
+        <div class="form-remember">
+            <label class="checkbox-container">
+                <input asp-for="RememberMe" class="form-check-input" />
+                <span class="checkmark"></span>
+                <span class="remember-text">Remember me</span>
+            </label>
+            <a asp-action="ForgotPassword" class="forgot-password">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn-login">
+            <i class="fas fa-sign-in-alt"></i> Login
+        </button>
+
+        <div class="login-footer">
+            Don't have an account? <a asp-action="Register" class="register-link">Register here</a>
+        </div>
+    </form>
+</div>
+}
+
+
+@section Scripts {
+    <script>
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
+    </script>
+}
