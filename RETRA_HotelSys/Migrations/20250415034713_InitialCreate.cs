@@ -45,6 +45,7 @@ namespace RETRA_HotelSys.Migrations
                     LastUpdated = table.Column<DateTime>(type: "datetime2", nullable: true),
                     ProfilePicture = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     LastLoginDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    LastAccessDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -78,7 +79,9 @@ namespace RETRA_HotelSys.Migrations
                     SizeInSqFt = table.Column<int>(type: "int", nullable: true),
                     BedConfiguration = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    MainImagePath = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    AdditionalImagesJson = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -94,9 +97,11 @@ namespace RETRA_HotelSys.Migrations
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     IconClass = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    CustomIconPath = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     IsStandardFeature = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DefaultAdditionalCost = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -246,7 +251,10 @@ namespace RETRA_HotelSys.Migrations
                     MaxOccupancy = table.Column<int>(type: "int", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     LastCleaned = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Amenities = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true)
+                    Amenities = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -293,14 +301,14 @@ namespace RETRA_HotelSys.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Username = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     RoleId = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     LastLoginDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()"),
                     ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -333,7 +341,8 @@ namespace RETRA_HotelSys.Migrations
                     SpecialRequests = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CancellationDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    CancellationDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    PaymentStatus = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -553,9 +562,21 @@ namespace RETRA_HotelSys.Migrations
                 column: "AmenityId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_StaffMembers_Email",
+                table: "StaffMembers",
+                column: "Email",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_StaffMembers_RoleId",
                 table: "StaffMembers",
                 column: "RoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StaffMembers_Username",
+                table: "StaffMembers",
+                column: "Username",
+                unique: true);
         }
 
         /// <inheritdoc />

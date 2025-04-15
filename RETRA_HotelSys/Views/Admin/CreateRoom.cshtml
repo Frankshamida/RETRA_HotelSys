@@ -1,0 +1,90 @@
+﻿@using RETRA_HotelSys.Models.RoomManagement
+@model CreateRoomViewModel
+
+@{
+    ViewData["Title"] = "Create New Room";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2>Create New Room in @Model.CategoryName Category</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-action="Dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a asp-action="RoomManagement">Room Management</a></li>
+                    <li class="breadcrumb-item"><a asp-action="RoomsByCategory" asp-route-categoryId="@Model.RoomTypeId">@Model.CategoryName Rooms</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Create Room</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Room Details</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="CreateRoom" asp-route-categoryId="@Model.RoomTypeId" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <input type="hidden" asp-for="RoomTypeId" />
+                        <input type="hidden" asp-for="CategoryName" />
+
+                        <div class="form-group">
+                            <label asp-for="RoomNumber" class="control-label"></label>
+                            <input asp-for="RoomNumber" class="form-control" />
+                            <span asp-validation-for="RoomNumber" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="FloorNumber" class="control-label"></label>
+                            <select asp-for="FloorNumber" class="form-control" asp-items="Model.FloorOptions"></select>
+                            <span asp-validation-for="FloorNumber" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Notes" class="control-label"></label>
+                            <textarea asp-for="Notes" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="Notes" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Create Room
+                            </button>
+                            <a asp-action="RoomsByCategory" asp-route-categoryId="@Model.RoomTypeId" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Back to List
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-info-circle"></i> Creating Rooms</h5>
+                </div>
+                <div class="card-body">
+                    <p>Create a new room by filling in the details on the left.</p>
+                    <ul>
+                        <li><strong>Room Number:</strong> Must be unique for this hotel</li>
+                        <li><strong>Floor Number:</strong> Select from available floors</li>
+                        <li><strong>Notes:</strong> Optional notes about this room</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

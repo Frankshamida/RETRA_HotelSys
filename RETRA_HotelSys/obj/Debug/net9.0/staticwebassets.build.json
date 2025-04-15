@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "W2o2ZctuyX1qDC984Gon4znKIMWci0kBZLICPyFgRMk=",
+  "Hash": "C0DAoAm/b5i56ff+bEJRZvdb2HyexITe340ZaMVIJIk=",
   "Source": "RETRA_HotelSys",
   "BasePath": "_content/RETRA_HotelSys",
   "Mode": "Default",
@@ -3587,12 +3587,12 @@
       "OriginalItemSpec": "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\9.0.4\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\Debug\\net9.0\\compressed\\ui9d29lyul-jpxbn5w2ay.gz",
+      "Identity": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\Debug\\net9.0\\compressed\\ui9d29lyul-9vugh73ged.gz",
       "SourceId": "RETRA_HotelSys",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/RETRA_HotelSys",
-      "RelativePath": "css/admin#[.{fingerprint=jpxbn5w2ay}]?.css.gz",
+      "RelativePath": "css/admin#[.{fingerprint=9vugh73ged}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -3601,8 +3601,8 @@
       "RelatedAsset": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\admin.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "njo66jrujw",
-      "Integrity": "PRxyR0Iu7aTW+vebvOa8U6lH8m9/wlO4ioCk4mrQfps=",
+      "Fingerprint": "czakw43nhy",
+      "Integrity": "aOv0EGL8cC2GzUpDTGmSPnoT5ZVGR4ebILHiJ4JfLaM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\admin.css"
@@ -4147,8 +4147,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jpxbn5w2ay",
-      "Integrity": "Z6orGXayJUhx6kOdVRyn9I1tsPb6t7caSlJXHpTTAwk=",
+      "Fingerprint": "9vugh73ged",
+      "Integrity": "u6KS/HmD0WXzcFm4ZqjgGsMNqPLc6aocPJHXify2gos=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\admin.css"
@@ -5962,13 +5962,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/admin.css",
-      "AssetFile": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\Debug\\net9.0\\compressed\\ui9d29lyul-jpxbn5w2ay.gz",
+      "Route": "css/admin.9vugh73ged.css",
+      "AssetFile": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\Debug\\net9.0\\compressed\\ui9d29lyul-9vugh73ged.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000510464523"
+          "Quality": "0.000335570470"
         }
       ],
       "ResponseHeaders": [
@@ -5978,19 +5978,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1958"
+          "Value": "2979"
         },
         {
           "Name": "ETag",
-          "Value": "\"PRxyR0Iu7aTW+vebvOa8U6lH8m9/wlO4ioCk4mrQfps=\""
+          "Value": "\"aOv0EGL8cC2GzUpDTGmSPnoT5ZVGR4ebILHiJ4JfLaM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 14 Apr 2025 01:53:33 GMT"
+          "Value": "Tue, 15 Apr 2025 02:20:15 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -6006,18 +6006,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Z6orGXayJUhx6kOdVRyn9I1tsPb6t7caSlJXHpTTAwk=\""
+          "Value": "W/\"u6KS/HmD0WXzcFm4ZqjgGsMNqPLc6aocPJHXify2gos=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "9vugh73ged"
+        },
+        {
+          "Name": "label",
+          "Value": "css/admin.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-Z6orGXayJUhx6kOdVRyn9I1tsPb6t7caSlJXHpTTAwk="
+          "Value": "sha256-u6KS/HmD0WXzcFm4ZqjgGsMNqPLc6aocPJHXify2gos="
         }
       ]
     },
     {
-      "Route": "css/admin.css",
+      "Route": "css/admin.9vugh73ged.css",
       "AssetFile": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\admin.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -6027,7 +6035,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7873"
+          "Value": "13003"
         },
         {
           "Name": "Content-Type",
@@ -6035,121 +6043,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Z6orGXayJUhx6kOdVRyn9I1tsPb6t7caSlJXHpTTAwk=\""
+          "Value": "\"u6KS/HmD0WXzcFm4ZqjgGsMNqPLc6aocPJHXify2gos=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 14 Apr 2025 01:53:33 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Z6orGXayJUhx6kOdVRyn9I1tsPb6t7caSlJXHpTTAwk="
-        }
-      ]
-    },
-    {
-      "Route": "css/admin.css.gz",
-      "AssetFile": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\Debug\\net9.0\\compressed\\ui9d29lyul-jpxbn5w2ay.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1958"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"PRxyR0Iu7aTW+vebvOa8U6lH8m9/wlO4ioCk4mrQfps=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 14 Apr 2025 01:53:33 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-PRxyR0Iu7aTW+vebvOa8U6lH8m9/wlO4ioCk4mrQfps="
-        }
-      ]
-    },
-    {
-      "Route": "css/admin.jpxbn5w2ay.css",
-      "AssetFile": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\Debug\\net9.0\\compressed\\ui9d29lyul-jpxbn5w2ay.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000510464523"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1958"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"PRxyR0Iu7aTW+vebvOa8U6lH8m9/wlO4ioCk4mrQfps=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 14 Apr 2025 01:53:33 GMT"
+          "Value": "Tue, 15 Apr 2025 02:20:15 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"Z6orGXayJUhx6kOdVRyn9I1tsPb6t7caSlJXHpTTAwk=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "jpxbn5w2ay"
+          "Value": "9vugh73ged"
         },
         {
           "Name": "label",
@@ -6157,13 +6065,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Z6orGXayJUhx6kOdVRyn9I1tsPb6t7caSlJXHpTTAwk="
+          "Value": "sha256-u6KS/HmD0WXzcFm4ZqjgGsMNqPLc6aocPJHXify2gos="
         }
       ]
     },
     {
-      "Route": "css/admin.jpxbn5w2ay.css",
-      "AssetFile": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\admin.css",
+      "Route": "css/admin.9vugh73ged.css.gz",
+      "AssetFile": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\Debug\\net9.0\\compressed\\ui9d29lyul-9vugh73ged.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6172,7 +6080,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7873"
+          "Value": "2979"
         },
         {
           "Name": "Content-Type",
@@ -6180,56 +6088,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Z6orGXayJUhx6kOdVRyn9I1tsPb6t7caSlJXHpTTAwk=\""
+          "Value": "\"aOv0EGL8cC2GzUpDTGmSPnoT5ZVGR4ebILHiJ4JfLaM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 14 Apr 2025 01:53:33 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jpxbn5w2ay"
-        },
-        {
-          "Name": "label",
-          "Value": "css/admin.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Z6orGXayJUhx6kOdVRyn9I1tsPb6t7caSlJXHpTTAwk="
-        }
-      ]
-    },
-    {
-      "Route": "css/admin.jpxbn5w2ay.css.gz",
-      "AssetFile": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\Debug\\net9.0\\compressed\\ui9d29lyul-jpxbn5w2ay.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1958"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"PRxyR0Iu7aTW+vebvOa8U6lH8m9/wlO4ioCk4mrQfps=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 14 Apr 2025 01:53:33 GMT"
+          "Value": "Tue, 15 Apr 2025 02:20:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6247,7 +6110,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "jpxbn5w2ay"
+          "Value": "9vugh73ged"
         },
         {
           "Name": "label",
@@ -6255,7 +6118,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-PRxyR0Iu7aTW+vebvOa8U6lH8m9/wlO4ioCk4mrQfps="
+          "Value": "sha256-aOv0EGL8cC2GzUpDTGmSPnoT5ZVGR4ebILHiJ4JfLaM="
+        }
+      ]
+    },
+    {
+      "Route": "css/admin.css",
+      "AssetFile": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\Debug\\net9.0\\compressed\\ui9d29lyul-9vugh73ged.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000335570470"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2979"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aOv0EGL8cC2GzUpDTGmSPnoT5ZVGR4ebILHiJ4JfLaM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 15 Apr 2025 02:20:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"u6KS/HmD0WXzcFm4ZqjgGsMNqPLc6aocPJHXify2gos=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-u6KS/HmD0WXzcFm4ZqjgGsMNqPLc6aocPJHXify2gos="
+        }
+      ]
+    },
+    {
+      "Route": "css/admin.css",
+      "AssetFile": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\admin.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"u6KS/HmD0WXzcFm4ZqjgGsMNqPLc6aocPJHXify2gos=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 15 Apr 2025 02:20:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-u6KS/HmD0WXzcFm4ZqjgGsMNqPLc6aocPJHXify2gos="
+        }
+      ]
+    },
+    {
+      "Route": "css/admin.css.gz",
+      "AssetFile": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\Debug\\net9.0\\compressed\\ui9d29lyul-9vugh73ged.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2979"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aOv0EGL8cC2GzUpDTGmSPnoT5ZVGR4ebILHiJ4JfLaM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 15 Apr 2025 02:20:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-aOv0EGL8cC2GzUpDTGmSPnoT5ZVGR4ebILHiJ4JfLaM="
         }
       ]
     },

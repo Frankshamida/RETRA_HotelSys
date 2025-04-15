@@ -153,6 +153,26 @@ namespace RETRA_HotelSys.Data
             // Configure StaffRoles primary key
             modelBuilder.Entity<StaffRoles>()
                 .HasKey(sr => sr.RoleId);
+
+            modelBuilder.Entity<StaffMembers>(entity =>
+            {
+                entity.HasIndex(s => s.Username).IsUnique();
+                entity.HasIndex(s => s.Email).IsUnique();
+                entity.Property(s => s.CreatedDate).HasDefaultValueSql("GETUTCDATE()");
+            });
+
+            modelBuilder.Entity<RoomFeatures>(entity =>
+            {
+                entity.Property(e => e.DefaultAdditionalCost)
+                      .HasColumnType("decimal(18,2)");
+                // OR: .HasPrecision(18, 2); // .NET 6+
+            });
+
+            modelBuilder.Entity<RoomFeatures>()
+               .Property(e => e.DefaultAdditionalCost)
+               .HasPrecision(18, 2);
+
+
         }
     }
 }

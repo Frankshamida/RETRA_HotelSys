@@ -12,7 +12,7 @@ using RETRA_HotelSys.Data;
 namespace RETRA_HotelSys.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250413175546_InitialCreate")]
+    [Migration("20250415034713_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -199,6 +199,10 @@ namespace RETRA_HotelSys.Migrations
                     b.Property<int>("NumberOfChildren")
                         .HasColumnType("int");
 
+                    b.Property<string>("PaymentStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("RoomId")
                         .HasColumnType("int");
 
@@ -269,6 +273,9 @@ namespace RETRA_HotelSys.Migrations
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastAccessDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("LastLoginDate")
                         .HasColumnType("datetime2");
@@ -372,6 +379,9 @@ namespace RETRA_HotelSys.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsAvailable")
                         .HasColumnType("bit");
 
@@ -390,6 +400,13 @@ namespace RETRA_HotelSys.Migrations
 
                     b.Property<int>("MaxOccupancy")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Notes")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RoomNumber")
                         .IsRequired()
@@ -518,6 +535,9 @@ namespace RETRA_HotelSys.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoomTypeId"));
 
+                    b.Property<string>("AdditionalImagesJson")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("BasePrice")
                         .HasColumnType("decimal(18, 2)");
 
@@ -529,6 +549,10 @@ namespace RETRA_HotelSys.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MainImagePath")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("MaxCapacity")
                         .HasColumnType("int");
@@ -559,6 +583,14 @@ namespace RETRA_HotelSys.Migrations
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("CustomIconPath")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<decimal>("DefaultAdditionalCost")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -672,11 +704,13 @@ namespace RETRA_HotelSys.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StaffId"));
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -715,7 +749,13 @@ namespace RETRA_HotelSys.Migrations
 
                     b.HasKey("StaffId");
 
+                    b.HasIndex("Email")
+                        .IsUnique();
+
                     b.HasIndex("RoleId");
+
+                    b.HasIndex("Username")
+                        .IsUnique();
 
                     b.ToTable("StaffMembers");
                 });

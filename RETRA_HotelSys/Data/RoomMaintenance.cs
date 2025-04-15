@@ -40,5 +40,6 @@ namespace RETRA_HotelSys.Data
         public virtual HotelRooms HotelRoom { get; set; }
         public virtual StaffMembers? AssignedStaff { get; set; }
         public virtual StaffMembers? CreatedByStaff { get; set; }
+
     }
 }

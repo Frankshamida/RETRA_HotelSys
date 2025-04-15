@@ -1,0 +1,105 @@
+﻿@using RETRA_HotelSys.Models.StaffManagement
+@model StaffManagementViewModel
+
+@{
+    ViewData["Title"] = "Staff Management";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="admin-container">
+    <div class="admin-header">
+        <h1>Staff Management</h1>
+        <a asp-action="CreateStaff" class="btn btn-primary">
+            <i class="fas fa-user-plus"></i> Add New Staff
+        </a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var staff in Model.StaffMembers)
+                        {
+                            <tr>
+                                <td>@staff.FirstName @staff.LastName</td>
+                                <td>@staff.Username</td>
+                                <td>@staff.Email</td>
+                                <td>@staff.StaffRole?.RoleName</td>
+                                <td>
+                                    <span class="badge @(staff.IsActive ? "badge-success" : "badge-secondary")">
+                                        @(staff.IsActive ? "Active" : "Inactive")
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <!-- Edit Button -->
+                                        <a asp-action="EditStaff" asp-route-id="@staff.StaffId"
+                                           class="btn btn-sm btn-outline-primary" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+
+                                        <!-- Details Button -->
+                                        <a asp-action="StaffDetails" asp-route-id="@staff.StaffId"
+                                           class="btn btn-sm btn-outline-info" title="Details">
+                                            <i class="fas fa-info-circle"></i>
+                                        </a>
+
+                                        <!-- Status Toggle Button -->
+                                        <form asp-action="ToggleStaffStatus" asp-route-id="@staff.StaffId" method="post"
+                                              class="d-inline" onsubmit="return confirm('Are you sure you want to @(staff.IsActive ? "deactivate" : "activate") this staff member?');">
+                                            <button type="submit" class="btn btn-sm @(staff.IsActive ? "btn-outline-danger" : "btn-outline-success")"
+                                                    title="@(staff.IsActive ? "Deactivate" : "Activate")">
+                                                <i class="fas @(staff.IsActive ? "fa-user-slash" : "fa-user-check")"></i>
+                                            </button>
+                                        </form>
+
+                                        <!-- Delete Button -->
+                                        <form asp-action="DeleteStaff" asp-route-id="@staff.StaffId" method="post"
+                                              class="d-inline" onsubmit="return confirm('Are you sure you want to permanently delete this staff member?');">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Optional: Add confirmation for status toggle
+        function confirmStatusChange(isActive) {
+            return confirm(`Are you sure you want to ${isActive ? 'deactivate' : 'activate'} this staff member?`);
+        }
+    </script>
+}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RETRA_HotelSys.Data
 {
@@ -19,11 +20,18 @@ namespace RETRA_HotelSys.Data
         [MaxLength(50)]
         public string IconClass { get; set; }
 
+        // Image property for custom icons (alternative to IconClass)
+        [StringLength(255)]
+        public string? CustomIconPath { get; set; } // Path to custom icon/image
+
         public bool IsStandardFeature { get; set; } = false;
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         public DateTime? ModifiedDate { get; set; }
 
         // Navigation property
         public virtual ICollection<RoomTypeFeatures> RoomTypeFeatures { get; set; } = new List<RoomTypeFeatures>();
+        
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal DefaultAdditionalCost { get; set; }
     }
 }

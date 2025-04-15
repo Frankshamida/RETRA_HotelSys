@@ -222,7 +222,6 @@ C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\obj\Debug\net9.0\staticwebas
 C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.RETRA_HotelSys.props
 C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.RETRA_HotelSys.props
 C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\obj\Debug\net9.0\staticwebassets.pack.json
-C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\obj\Debug\net9.0\RETRA_Ho.30C6BEFE.Up2Date
 C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\obj\Debug\net9.0\RETRA_HotelSys.dll
 C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\obj\Debug\net9.0\refint\RETRA_HotelSys.dll
@@ -308,4 +307,5 @@ C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\obj\Debug\net9.0\compressed\
 C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\obj\Debug\net9.0\compressed\yfc7ypekbg-mlv21k5csn.gz
 C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\obj\Debug\net9.0\compressed\ws2qdqg9rz-ein8ymuuq0.gz
 C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\bin\Debug\net9.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
-C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\obj\Debug\net9.0\compressed\ui9d29lyul-jpxbn5w2ay.gz
+C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\User\Desktop\RETRA_HotelSys\RETRA_HotelSys\obj\Debug\net9.0\compressed\ui9d29lyul-9vugh73ged.gz

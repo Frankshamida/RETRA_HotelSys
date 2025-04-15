@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/RETRA_HotelSys/css/admin.9vugh73ged.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\admin.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"9vugh73ged"},{"Name":"integrity","Value":"sha256-u6KS/HmD0WXzcFm4ZqjgGsMNqPLc6aocPJHXify2gos="},{"Name":"label","Value":"_content/RETRA_HotelSys/css/admin.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"13003"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022u6KS/HmD0WXzcFm4ZqjgGsMNqPLc6aocPJHXify2gos=\u0022"},{"Name":"Last-Modified","Value":"Tue, 15 Apr 2025 02:20:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/RETRA_HotelSys/css/admin.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\admin.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Z6orGXayJUhx6kOdVRyn9I1tsPb6t7caSlJXHpTTAwk="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"7873"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Z6orGXayJUhx6kOdVRyn9I1tsPb6t7caSlJXHpTTAwk=\u0022"},{"Name":"Last-Modified","Value":"Mon, 14 Apr 2025 01:53:33 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/RETRA_HotelSys/css/admin.jpxbn5w2ay.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\admin.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jpxbn5w2ay"},{"Name":"integrity","Value":"sha256-Z6orGXayJUhx6kOdVRyn9I1tsPb6t7caSlJXHpTTAwk="},{"Name":"label","Value":"_content/RETRA_HotelSys/css/admin.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"7873"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Z6orGXayJUhx6kOdVRyn9I1tsPb6t7caSlJXHpTTAwk=\u0022"},{"Name":"Last-Modified","Value":"Mon, 14 Apr 2025 01:53:33 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-u6KS/HmD0WXzcFm4ZqjgGsMNqPLc6aocPJHXify2gos="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"13003"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022u6KS/HmD0WXzcFm4ZqjgGsMNqPLc6aocPJHXify2gos=\u0022"},{"Name":"Last-Modified","Value":"Tue, 15 Apr 2025 02:20:15 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/RETRA_HotelSys/css/guesthomepage.5p96pzj6dy.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\guesthomepage.css'))</AssetFile>

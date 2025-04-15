@@ -66,5 +66,8 @@ namespace RETRA_HotelSys.Data
         public virtual RoomCategories RoomCategory { get; set; }
         public virtual ICollection<GuestReservations> GuestReservations { get; set; } = new List<GuestReservations>();
         public virtual ICollection<RoomMaintenance> RoomMaintenances { get; set; } = new List<RoomMaintenance>();
+        public string Notes { get; internal set; }
+        public DateTime ModifiedDate { get; internal set; }
+        public bool IsActive { get; internal set; }
     }
 }

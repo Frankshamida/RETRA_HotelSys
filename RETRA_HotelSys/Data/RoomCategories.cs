@@ -25,6 +25,13 @@ namespace RETRA_HotelSys.Data
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         public DateTime? ModifiedDate { get; set; }
 
+        // Image properties
+        [StringLength(255)]
+        public string? MainImagePath { get; set; } // Path to the main room image
+
+        // For multiple images (consider a separate table if you need many images per room type)
+        public string? AdditionalImagesJson { get; set; } // JSON array of image paths, or consider a separate RoomTypeImages table
+
         // Navigation properties
         public virtual ICollection<HotelRooms> HotelRooms { get; set; } = new List<HotelRooms>();
         public virtual ICollection<RoomTypeFeatures> RoomTypeFeatures { get; set; } = new List<RoomTypeFeatures>();

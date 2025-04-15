@@ -1,0 +1,226 @@
+﻿@using RETRA_HotelSys.Models.RoomManagement
+@model RoomDetailsViewModel
+
+@{
+    ViewData["Title"] = "Room Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2>Room @Model.Room.RoomNumber Details</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-action="Dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a asp-action="RoomManagement">Room Management</a></li>
+                    <li class="breadcrumb-item"><a asp-action="RoomsByCategory" asp-route-categoryId="@Model.Room.RoomTypeId">@Model.Room.RoomType Rooms</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Room @Model.Room.RoomNumber</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Room Information Column -->
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4>Basic Information</h4>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">Room Number:</dt>
+                        <dd class="col-sm-8">@Model.Room.RoomNumber</dd>
+
+                        <dt class="col-sm-4">Floor:</dt>
+                        <dd class="col-sm-8">@Model.Room.FloorNumber</dd>
+
+                        <dt class="col-sm-4">Category:</dt>
+                        <dd class="col-sm-8">@Model.Room.RoomType</dd>
+
+                        <dt class="col-sm-4">Status:</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.Room.IsAvailable)
+                            {
+                                <span class="badge badge-success">Available</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-warning">Occupied</span>
+                            }
+                        </dd>
+
+                        <dt class="col-sm-4">Clean Status:</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.Room.IsClean)
+                            {
+                                <span class="badge badge-success">Clean</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-danger">Needs Cleaning</span>
+                            }
+                        </dd>
+
+                        <dt class="col-sm-4">Base Price:</dt>
+                        <dd class="col-sm-8">@Model.Room.BasePrice.ToString("C")</dd>
+
+                        <dt class="col-sm-4">Max Occupancy:</dt>
+                        <dd class="col-sm-8">@Model.Room.MaxOccupancy</dd>
+                    </dl>
+
+                    <div class="form-group">
+                        <a asp-action="EditRoom" asp-route-id="@Model.Room.RoomId" class="btn btn-primary">
+                            <i class="fas fa-edit"></i> Edit Room
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Room Features -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4>Room Features</h4>
+                </div>
+                <div class="card-body">
+                    @if (Model.RoomFeatures.Any())
+                    {
+                        <div class="feature-badges">
+                            @foreach (var feature in Model.RoomFeatures)
+                            {
+                                <span class="badge badge-info mb-2" style="font-size:1em; padding:8px;">
+                                    @if (!string.IsNullOrEmpty(feature.IconClass))
+                                    {
+                                        <i class="@feature.IconClass"></i>
+                                    }
+                                    @feature.Name
+                                </span>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <p>No special features for this room.</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column - Current Reservation and Maintenance -->
+        <div class="col-md-6">
+            <!-- Current Reservation -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4>Current Reservation</h4>
+                </div>
+                <div class="card-body">
+                    @if (Model.CurrentReservation != null)
+                    {
+                        <dl class="row">
+                            <dt class="col-sm-5">Guest Name:</dt>
+                            <dd class="col-sm-7">@Model.CurrentReservation.GuestName</dd>
+
+                            <dt class="col-sm-5">Check-In:</dt>
+                            <dd class="col-sm-7">@Model.CurrentReservation.CheckInDate.ToString("d")</dd>
+
+                            <dt class="col-sm-5">Check-Out:</dt>
+                            <dd class="col-sm-7">@Model.CurrentReservation.CheckOutDate.ToString("d")</dd>
+
+                            <dt class="col-sm-5">Status:</dt>
+                            <dd class="col-sm-7">@Model.CurrentReservation.BookingStatus</dd>
+                        </dl>
+                    }
+                    else
+                    {
+                        <p>No current reservation for this room.</p>
+                    }
+                </div>
+            </div>
+
+            <!-- Upcoming Reservations -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4>Upcoming Reservations</h4>
+                </div>
+                <div class="card-body">
+                    @if (Model.UpcomingReservations.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Guest</th>
+                                        <th>Check-In</th>
+                                        <th>Check-Out</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var reservation in Model.UpcomingReservations)
+                                    {
+                                        <tr>
+                                        <tr>
+                                            <td>@reservation.GuestName</td>
+                                            <td>@reservation.CheckInDate.ToString("d")</td>
+                                            <td>@reservation.CheckOutDate.ToString("d")</td>
+                                        </tr>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <p>No upcoming reservations for this room.</p>
+                    }
+                </div>
+            </div>
+
+            <!-- Maintenance History -->
+            <div class="card">
+                <div class="card-header">
+                    <h4>Maintenance History</h4>
+                </div>
+                <div class="card-body">
+                    @if (Model.MaintenanceHistory.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var maintenance in Model.MaintenanceHistory)
+                                    {
+                                        <tr>
+                                            <td>@maintenance.ScheduledDate.ToString("d")</td>
+                                            <td>@maintenance.Type</td>
+                                            <td>@maintenance.Status</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <p>No maintenance history for this room.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            // Initialize any necessary scripts here
+        });
+    </script>
+}
