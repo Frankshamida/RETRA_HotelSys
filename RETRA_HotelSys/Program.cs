@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Identity;
 using RETRA_HotelSys.Models;
 using Microsoft.Extensions.Logging;
 using RETRA_HotelSys;
-using Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,7 +41,21 @@ builder.Services.AddIdentity<HotelGuests, IdentityRole>(options =>
 })
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders()
-.AddErrorDescriber<CustomIdentityErrorDescriber>(); // Optional: For custom error messages
+.AddErrorDescriber<CustomIdentityErrorDescriber>();
+
+// Add this after AddIdentity but before builder.Build()
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+})
+.AddCookie("StaffCookies", options =>
+{
+    options.LoginPath = "/Staff/Login";
+    options.AccessDeniedPath = "/Staff/AccessDenied";
+    options.ExpireTimeSpan = TimeSpan.FromDays(30);
+    options.Cookie.Name = "StaffAuthCookie";
+});
 
 // Configure Application Cookie
 builder.Services.ConfigureApplicationCookie(options =>
@@ -73,8 +86,6 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
     options.AddPolicy("GuestOnly", policy => policy.RequireRole("Guest"));
     options.AddPolicy("StaffOnly", policy => policy.RequireRole("Admin", "FrontDesk", "Housekeeping"));
-
-    // Add more policies as needed
     options.AddPolicy("RequireAdminOrManager", policy =>
         policy.RequireRole("Admin", "Manager"));
 });
@@ -85,24 +96,6 @@ builder.Logging.AddConsole();
 builder.Logging.AddDebug();
 
 var app = builder.Build();
-
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
-    try
-    {
-        var context = services.GetRequiredService<ApplicationDbContext>();
-        var userManager = services.GetRequiredService<UserManager<HotelGuests>>();
-        var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-
-        await DbInitializer.InitializeAsync(context, userManager, roleManager);
-    }
-    catch (Exception ex)
-    {
-        var logger = services.GetRequiredService<ILogger<Program>>();
-        logger.LogError(ex, "An error occurred while seeding the database.");
-    }
-}
 
 // Database seeding with error handling
 using (var scope = app.Services.CreateScope())
@@ -117,7 +110,7 @@ using (var scope = app.Services.CreateScope())
         // Apply pending migrations
         if (context.Database.GetPendingMigrations().Any())
         {
-            context.Database.Migrate();
+            await context.Database.MigrateAsync();
         }
 
         await DbInitializer.InitializeAsync(context, userManager, roleManager);
@@ -138,20 +131,30 @@ if (!app.Environment.IsDevelopment())
 else
 {
     app.UseDeveloperExceptionPage();
-    app.UseMigrationsEndPoint(); // Shows migration status in development
+    app.UseMigrationsEndPoint();
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseSession(); // Important: Must be before UseRouting()
+app.UseSession();
 
 app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Configure routes
+// Fixed routing configuration to prevent ambiguous matches
+app.MapControllerRoute(
+    name: "admin-dashboard",
+    pattern: "Admin/Dashboard",
+    defaults: new { controller = "Admin", action = "Dashboard" });
+
+app.MapControllerRoute(
+    name: "admin-create-room-category",
+    pattern: "Admin/CreateRoomCategory",
+    defaults: new { controller = "Admin", action = "CreateRoomCategory" });
+
 app.MapControllerRoute(
     name: "admin-access",
     pattern: "Admin/Access",
@@ -163,9 +166,10 @@ app.MapControllerRoute(
     defaults: new { controller = "Account", action = "Login" });
 
 app.MapControllerRoute(
-    name: "admin",
+    name: "admin-default",
     pattern: "Admin/{action=Index}/{id?}",
-    defaults: new { controller = "Admin" });
+    defaults: new { controller = "Admin" },
+    constraints: new { action = "^(?!Dashboard$|CreateRoomCategory$).*" }); // Exclude specific actions
 
 app.MapControllerRoute(
     name: "areas",
@@ -177,7 +181,7 @@ app.MapControllerRoute(
 
 app.Run();
 
-// Optional: Custom Identity Error Describer
+// Custom Identity Error Describer
 public class CustomIdentityErrorDescriber : IdentityErrorDescriber
 {
     public override IdentityError DuplicateEmail(string email)
@@ -189,5 +193,22 @@ public class CustomIdentityErrorDescriber : IdentityErrorDescriber
         };
     }
 
-    // Override other error messages as needed
+    public override IdentityError DuplicateUserName(string userName)
+    {
+        return new IdentityError
+        {
+            Code = nameof(DuplicateUserName),
+            Description = $"Username '{userName}' is already taken."
+        };
+    }
+
+    public override IdentityError PasswordTooShort(int length)
+    {
+        return new IdentityError
+        {
+            Code = nameof(PasswordTooShort),
+            Description = $"Passwords must be at least {length} characters."
+        };
+    }
 }
+

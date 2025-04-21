@@ -19,41 +19,128 @@
         </div>
     </div>
 
-    <!-- Status Summary Cards -->
-    <div class="row mb-4">
-        <div class="col-md-3">
-            <div class="card text-white bg-primary">
-                <div class="card-body">
-                    <h5 class="card-title">Total Rooms</h5>
-                    <p class="card-text display-4">@Model.RoomStatusSummary.TotalRooms</p>
+
+    <!-- Ultra-Modern Status Cards -->
+    <div class="row g-4 mb-5">
+        <!-- Total Rooms Card -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card card-hover border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-gradient-bg bg-primary"></div>
+                <div class="card-body p-4 position-relative">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="card-subtitle mb-2 text-primary-emphasis">TOTAL ROOMS</h6>
+                            <h2 class="card-title mb-0 fw-bold text-dark">@Model.RoomStatusSummary.TotalRooms</h2>
+                        </div>
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-3">
+                            <i class="bi bi-door-closed fs-4 text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="progress" style="height: 6px; background-color: rgba(13, 110, 253, 0.1)">
+                            <div class="progress-bar bg-primary" style="width: 100%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card text-white bg-success">
-                <div class="card-body">
-                    <h5 class="card-title">Available</h5>
-                    <p class="card-text display-4">@Model.RoomStatusSummary.AvailableRooms</p>
+
+        <!-- Available Rooms Card -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card card-hover border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-gradient-bg bg-success"></div>
+                <div class="card-body p-4 position-relative">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="card-subtitle mb-2 text-success-emphasis">AVAILABLE</h6>
+                            <h2 class="card-title mb-0 fw-bold text-dark">@Model.RoomStatusSummary.AvailableRooms</h2>
+                        </div>
+                        <div class="bg-success bg-opacity-10 p-3 rounded-3">
+                            <i class="bi bi-check-circle fs-4 text-success"></i>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="progress" style="height: 6px; background-color: rgba(25, 135, 84, 0.1)">
+                            <div class="progress-bar bg-success"
+                                 style="width: @(Model.RoomStatusSummary.TotalRooms == 0 ? 0 : (Model.RoomStatusSummary.AvailableRooms * 100)/Model.RoomStatusSummary.TotalRooms)%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card text-white bg-warning">
-                <div class="card-body">
-                    <h5 class="card-title">Occupied</h5>
-                    <p class="card-text display-4">@Model.RoomStatusSummary.OccupiedRooms</p>
+
+        <!-- Occupied Rooms Card -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card card-hover border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-gradient-bg bg-warning"></div>
+                <div class="card-body p-4 position-relative">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="card-subtitle mb-2 text-warning-emphasis">OCCUPIED</h6>
+                            <h2 class="card-title mb-0 fw-bold text-dark">@Model.RoomStatusSummary.OccupiedRooms</h2>
+                        </div>
+                        <div class="bg-warning bg-opacity-10 p-3 rounded-3">
+                            <i class="bi bi-person-fill fs-4 text-warning"></i>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="progress" style="height: 6px; background-color: rgba(255, 193, 7, 0.1)">
+                            <div class="progress-bar bg-warning"
+                                 style="width: @(Model.RoomStatusSummary.TotalRooms == 0 ? 0 : (Model.RoomStatusSummary.OccupiedRooms * 100)/Model.RoomStatusSummary.TotalRooms)%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card text-white bg-danger">
-                <div class="card-body">
-                    <h5 class="card-title">Maintenance</h5>
-                    <p class="card-text display-4">@Model.RoomStatusSummary.MaintenanceRooms</p>
+
+        <!-- Maintenance Rooms Card -->
+        <div class="col-md-6 col-lg-3">
+            <div class="card card-hover border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-gradient-bg bg-danger"></div>
+                <div class="card-body p-4 position-relative">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="card-subtitle mb-2 text-danger-emphasis">MAINTENANCE</h6>
+                            <h2 class="card-title mb-0 fw-bold text-dark">@Model.RoomStatusSummary.MaintenanceRooms</h2>
+                        </div>
+                        <div class="bg-danger bg-opacity-10 p-3 rounded-3">
+                            <i class="bi bi-tools fs-4 text-danger"></i>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="progress" style="height: 6px; background-color: rgba(220, 53, 69, 0.1)">
+                            <div class="progress-bar bg-danger"
+                                 style="width: @(Model.RoomStatusSummary.TotalRooms == 0 ? 0 : (Model.RoomStatusSummary.MaintenanceRooms * 100)/Model.RoomStatusSummary.TotalRooms)%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Modern Alerts -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show rounded-3 shadow-sm border-0" role="alert">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                <div class="text-dark">@TempData["SuccessMessage"]</div>
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show rounded-3 shadow-sm border-0" role="alert">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                <div class="text-dark">@TempData["ErrorMessage"]</div>
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    }
+
 
     <!-- Room Categories Section -->
     <div class="row">
@@ -72,6 +159,7 @@
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
+                                        <th>Image</th>
                                         <th>Category</th>
                                         <th>Base Price</th>
                                         <th>Capacity</th>
@@ -84,6 +172,21 @@
                                     @foreach (var category in Model.RoomCategories)
                                     {
                                         <tr>
+                                            <td>
+                                                @if (!string.IsNullOrEmpty(category.MainImagePath))
+                                                {
+                                                    <img src="@category.MainImagePath"
+                                                         alt="@category.TypeName"
+                                                         class="img-thumbnail"
+                                                         style="max-width: 100px; max-height: 100px; object-fit: cover;" />
+                                                }
+                                                else
+                                                {
+                                                    <div class="no-image-placeholder" style="width: 100px; height: 100px; background: #eee; display: flex; align-items: center; justify-content: center;">
+                                                        <i class="fas fa-image" style="font-size: 2rem; color: #aaa;"></i>
+                                                    </div>
+                                                }
+                                            </td>
                                             <td>
                                                 <strong>@category.TypeName</strong>
                                                 @if (!string.IsNullOrEmpty(category.Description))
@@ -142,7 +245,7 @@
                                                        class="btn btn-sm btn-info" title="View Rooms">
                                                         <i class="fas fa-bed"></i>
                                                     </a>
-                                                    <a asp-action="EditRoom" asp-route-id="@category.RoomTypeId"
+                                                    <a asp-action="EditRoomCategory" asp-route-id="@category.RoomTypeId"
                                                        class="btn btn-sm btn-primary" title="Edit">
                                                         <i class="fas fa-edit"></i>
                                                     </a>
@@ -186,3 +289,47 @@
         });
     </script>
 }
+
+<style>
+.img-thumbnail {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    transition: transform 0.2s;
+}
+
+.img-thumbnail:hover {
+    transform: scale(1.05);
+}
+
+    .card-hover {
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1) !important;
+        }
+
+    .card-gradient-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(90deg, var(--bs-primary) 0%, var(--bs-primary) 100%);
+    }
+
+    .bg-success .card-gradient-bg {
+        background: linear-gradient(90deg, var(--bs-success) 0%, var(--bs-success) 100%);
+    }
+
+    .bg-warning .card-gradient-bg {
+        background: linear-gradient(90deg, var(--bs-warning) 0%, var(--bs-warning) 100%);
+    }
+
+    .bg-danger .card-gradient-bg {
+        background: linear-gradient(90deg, var(--bs-danger) 0%, var(--bs-danger) 100%);
+    }
+</style>

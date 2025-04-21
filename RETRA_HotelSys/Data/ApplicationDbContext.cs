@@ -27,6 +27,8 @@ namespace RETRA_HotelSys.Data
         public IEnumerable<object> MaintenanceTasks { get; internal set; }
         public object Rooms { get; internal set; }
         public IEnumerable<object> MaintenanceRequests { get; internal set; }
+        public IEnumerable<object> Bookings { get; internal set; }
+        public object RoomTypes { get; internal set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -171,6 +173,54 @@ namespace RETRA_HotelSys.Data
             modelBuilder.Entity<RoomFeatures>()
                .Property(e => e.DefaultAdditionalCost)
                .HasPrecision(18, 2);
+
+            // Configure GuestReservations relationships
+            modelBuilder.Entity<GuestReservations>()
+                .HasOne(gr => gr.Guest)
+                .WithMany(hg => hg.GuestReservations)
+                .HasForeignKey(gr => gr.GuestId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<GuestReservations>()
+                .HasOne(gr => gr.Room)
+                .WithMany(hr => hr.GuestReservations)
+                .HasForeignKey(gr => gr.RoomId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // ReservationStatusHistory relationships
+            modelBuilder.Entity<ReservationStatusHistory>()
+                .HasOne(rsh => rsh.Reservation)
+                .WithMany(gr => gr.StatusHistory)
+                .HasForeignKey(rsh => rsh.ReservationId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<ReservationStatusHistory>()
+                .HasOne(rsh => rsh.ChangedByStaff)
+                .WithMany()
+                .HasForeignKey(rsh => rsh.ChangedBy)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            // ReservationPayments relationships
+            modelBuilder.Entity<ReservationPayments>()
+                .HasOne(rp => rp.Reservation)
+                .WithMany(gr => gr.Payments)
+                .HasForeignKey(rp => rp.ReservationId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<ReservationPayments>()
+                .HasOne(rp => rp.ProcessedByStaff)
+                .WithMany()
+                .HasForeignKey(rp => rp.ProcessedBy)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            modelBuilder.Entity<GuestReservations>(entity =>
+            {
+                entity.Property(e => e.GuestEmail)
+                    .HasMaxLength(256); // Adjust max length as needed
+
+                entity.Property(e => e.GuestPhone)
+                    .HasMaxLength(20); // Adjust max length as needed
+            });
 
 
         }

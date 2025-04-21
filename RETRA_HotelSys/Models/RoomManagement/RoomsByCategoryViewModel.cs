@@ -5,7 +5,7 @@ namespace RETRA_HotelSys.Models.RoomManagement
 {
     public class RoomsByCategoryViewModel
     {
-        public RoomCategories Category { get; set; }
+        public Data.RoomCategories Category { get; set; }
         public List<HotelRooms> Rooms { get; set; }
     }
 }

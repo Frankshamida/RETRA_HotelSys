@@ -53,5 +53,12 @@ namespace RETRA_HotelSys.Data
         public virtual ICollection<ReservationStatusHistory> StatusHistory { get; set; } = new List<ReservationStatusHistory>();
         public virtual ICollection<ReservationPayments> Payments { get; set; } = new List<ReservationPayments>();
         public string PaymentStatus { get; internal set; }
+
+        [NotMapped]
+        public object ReservationStatus { get; internal set; }
+        public bool IsWalkIn { get; internal set; }
+        public string GuestEmail { get; set; }
+        public string GuestName { get; internal set; }
+        public string GuestPhone { get; set; }
     }
 }

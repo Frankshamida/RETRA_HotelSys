@@ -1,15 +1,6 @@
 ﻿@model RETRA_HotelSys.Models.LoginViewModel
 @{
-    // Remove this line or keep it, since we're controlling layout in controller
-    // Layout = "~/Views/Shared/_AdminLayout.cshtml";
     ViewData["Title"] = "Admin Login";
-}
-
-@if (TempData["SuccessMessage"] != null)
-{
-    <div class="alert alert-modern success" id="tempDataAlert">
-        <i class="fas fa-check-circle"></i> @TempData["SuccessMessage"]
-    </div>
 }
 
 <div class="login-container">

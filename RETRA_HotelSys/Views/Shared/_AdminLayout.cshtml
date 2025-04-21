@@ -35,13 +35,13 @@
                     </a>
                 </li>
                 <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Reservations" ? "active" : "")">
-                    <a asp-controller="Reservations" asp-action="Index">
-                        <i class="fas fa-calendar-check"></i> Reservations
+                    <a asp-controller="Admin" asp-action="Reservations">
+                        <i class="fas fa-calendar-check"></i> Online Reservation
                     </a>
                 </li>
-                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Maintenance" ? "active" : "")">
-                    <a asp-controller="Maintenance" asp-action="Index">
-                        <i class="fas fa-tools"></i> Maintenance
+                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "CreateManualReservation" ? "active" : "")">
+                    <a asp-controller="Admin" asp-action="CreateManualReservation">
+                        <i class="fas fa-user-plus"></i> Walk-In Reservation
                     </a>
                 </li>
                 <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Reports" ? "active" : "")">

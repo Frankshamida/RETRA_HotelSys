@@ -1,0 +1,518 @@
+﻿@using RETRA_HotelSys.Data
+@using RETRA_HotelSys.Models.Guest
+@model List<RoomAvailabilityViewModel>
+
+@{
+    ViewData["Title"] = "Available Rooms";
+}
+
+@{
+    int numberOfAdults = ViewBag.NumberOfAdults ?? (ViewBag.TotalGuests ?? 0);
+    int numberOfChildren = ViewBag.NumberOfChildren ?? 0;
+
+    string guestSummary = $"{numberOfAdults} Adult{(numberOfAdults != 1 ? "s" : "")}";
+
+    if (numberOfChildren > 0)
+    {
+        guestSummary += $", {numberOfChildren} Child{(numberOfChildren != 1 ? "ren" : "")}";
+    }
+}
+
+
+<div class="availability-container">
+    <div class="booking-summary">
+        <div class="summary-card">
+            <h3>Your Stay Details</h3>
+            <div class="summary-details">
+                <div class="detail-item">
+                    <span class="detail-label">Check-in:</span>
+                    <span class="detail-value">@ViewBag.CheckInDate.ToString("MMM dd, yyyy")</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Check-out:</span>
+                    <span class="detail-value">@ViewBag.CheckOutDate.ToString("MMM dd, yyyy")</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Duration:</span>
+                    <span class="detail-value">@((ViewBag.CheckOutDate - ViewBag.CheckInDate).Days) nights</span>
+
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Guests:</span>
+                    <span class="detail-value">@guestSummary</span>
+                </div>
+            </div>
+            <button class="btn-modify" onclick="history.back()">
+                <i class="fas fa-edit"></i> Modify Search
+            </button>
+        </div>
+        
+        @if (ViewBag.ShowCapacityWarning != null && (bool)ViewBag.ShowCapacityWarning)
+        {
+            <div class="alert-card warning">
+                <i class="fas fa-info-circle"></i>
+                <div>
+                    <h4>Note about your group size</h4>
+                    <p>We couldn't find rooms that exactly match your group size (@ViewBag.TotalGuests guests). The options below are the closest available.</p>
+                </div>
+            </div>
+        }
+    </div>
+    
+    <div class="available-rooms">
+        <h2>Available Room Types</h2>
+        
+        @if (!Model.Any())
+        {
+            <div class="no-rooms">
+                <img src="~/images/7.png" alt="No rooms available">
+                <h3>No rooms available for your selected dates</h3>
+                <p>Please try adjusting your dates or contact our reservations team for assistance.</p>
+                <a href="@Url.Action("Index", "Home")" class="btn-primary">
+                    <i class="fas fa-search"></i> New Search
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="room-filters">
+                <div class="filter-group">
+                    <label>Sort by:</label>
+                    <select class="sort-select">
+                        <option value="price-asc">Price (Low to High)</option>
+                        <option value="price-desc">Price (High to Low)</option>
+                        <option value="capacity">Capacity</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Filter:</label>
+                    <div class="filter-tags">
+                        <button class="filter-tag active">All</button>
+                        <button class="filter-tag">Standard</button>
+                        <button class="filter-tag">Deluxe</button>
+                        <button class="filter-tag">Suites</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rooms-grid">
+                @foreach (var room in Model)
+                {
+                    <div class="room-card" data-price="@room.BasePrice" data-capacity="@room.MaxCapacity">
+                        <div class="room-image-slider">
+                            <img src="@room.ImagePath" alt="@room.TypeName">
+                            <!-- Additional images would go here -->
+                            <div class="room-badge">@room.MaxCapacity Guests</div>
+                        </div>
+                        
+                        <div class="room-details">
+                            <h3>@room.TypeName</h3>
+                            <p class="room-description">@room.Description</p>
+                            
+                            <div class="room-features">
+                                <div class="feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>@room.BedConfiguration</span>
+                                </div>
+                                @if (room.SizeInSqFt.HasValue)
+                                {
+                                    <div class="feature">
+                                        <i class="fas fa-ruler-combined"></i>
+                                        <span>@room.SizeInSqFt sq.ft.</span>
+                                    </div>
+                                }
+                                <div class="feature">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Free WiFi</span>
+                                </div>
+                            </div>
+                            
+                            <div class="room-price">
+                                <div class="price-details">
+                                    <span class="price">@room.BasePrice.ToString("C")</span>
+                                    <span class="price-period">per night</span>
+                                    <span class="total-price">@((room.BasePrice * (ViewBag.CheckOutDate - ViewBag.CheckInDate).Days).ToString("C")) total</span>
+                                </div>
+                                
+                                <form asp-action="BookRoom" method="post">
+                                    <input type="hidden" name="roomTypeId" value="@room.RoomTypeId" />
+                                    <input type="hidden" name="checkInDate" value="@ViewBag.CheckInDate.ToString("yyyy-MM-dd")" />
+                                    <input type="hidden" name="checkOutDate" value="@ViewBag.CheckOutDate.ToString("yyyy-MM-dd")" />
+                                    <input type="hidden" name="numberOfAdults" value="@ViewBag.NumberOfAdults" />
+                                    <input type="hidden" name="numberOfChildren" value="@ViewBag.NumberOfChildren" />
+                                    
+                                    <button type="submit" class="btn-book">
+                                        Book Now <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .availability-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .booking-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .summary-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .summary-card h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 18px;
+        }
+        
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .detail-label {
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .detail-value {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .btn-modify {
+            width: 100%;
+            padding: 10px;
+            background: #f5f5f5;
+            border: none;
+            border-radius: 5px;
+            color: #555;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 15px;
+        }
+        
+        .btn-modify:hover {
+            background: #eee;
+        }
+        
+        .alert-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #fff8e6;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .alert-card.warning i {
+            color: #ffc107;
+            font-size: 20px;
+            margin-top: 3px;
+        }
+        
+        .alert-card h4 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
+        
+        .alert-card p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .available-rooms {
+            flex: 1;
+        }
+        
+        .available-rooms h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .no-rooms {
+            text-align: center;
+            padding: 50px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .no-rooms img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .no-rooms h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .no-rooms p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .room-filters {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .sort-select {
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background: white;
+        }
+        
+        .filter-tags {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .filter-tag {
+            padding: 6px 12px;
+            background: #f5f5f5;
+            border: none;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-tag.active {
+            background: #333;
+            color: white;
+        }
+        
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .room-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .room-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .room-image-slider {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .room-image-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .room-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        
+        .room-details {
+            padding: 20px;
+        }
+        
+        .room-details h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .room-description {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .room-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            color: #555;
+        }
+        
+        .feature i {
+            color: #777;
+        }
+        
+        .room-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        
+        .price-details {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .price-period {
+            font-size: 12px;
+            color: #999;
+        }
+        
+        .total-price {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .btn-book {
+            padding: 10px 20px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .btn-book:hover {
+            background: #0052a3;
+        }
+        
+        .btn-primary {
+            padding: 10px 20px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background: #0052a3;
+        }
+        
+
+    </style>
+}
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Room sorting functionality
+            $('.sort-select').change(function() {
+                const sortBy = $(this).val();
+                const $roomsGrid = $('.rooms-grid');
+                const $rooms = $('.room-card');
+                
+                $rooms.detach().sort(function(a, b) {
+                    const aPrice = parseFloat($(a).data('price'));
+                    const bPrice = parseFloat($(b).data('price'));
+                    const aCapacity = parseInt($(a).data('capacity'));
+                    const bCapacity = parseInt($(b).data('capacity'));
+                    
+                    switch(sortBy) {
+                        case 'price-asc':
+                            return aPrice - bPrice;
+                        case 'price-desc':
+                            return bPrice - aPrice;
+                        case 'capacity':
+                            return bCapacity - aCapacity;
+                        case 'popular':
+                            // This would require actual popularity data
+                            return 0;
+                        default:
+                            return 0;
+                    }
+                });
+                
+                $roomsGrid.append($rooms);
+            });
+            
+            // Filter functionality
+            $('.filter-tag').click(function() {
+                $('.filter-tag').removeClass('active');
+                $(this).addClass('active');
+                
+                const filter = $(this).text().toLowerCase();
+                $('.room-card').each(function() {
+                    const roomType = $(this).find('h3').text().toLowerCase();
+                    if (filter === 'all' || roomType.includes(filter)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
+    </script>
+}

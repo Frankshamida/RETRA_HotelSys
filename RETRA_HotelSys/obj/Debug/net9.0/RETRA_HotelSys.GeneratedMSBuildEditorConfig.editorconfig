@@ -36,6 +36,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Admin/CreateManualReservation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlTWFudWFsUmVzZXJ2YXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Admin/CreateRoom.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUm9vbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -64,6 +68,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Admin/Reservations/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVzZXJ2YXRpb25zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Admin/Reservations/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVzZXJ2YXRpb25zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Admin/Reservations/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVzZXJ2YXRpb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Admin/RoomDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUm9vbURldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -80,6 +96,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3RhZmZNYW5hZ2VtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Guest/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3Vlc3RcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Guest/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3Vlc3RcRm9yZ290UGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Guest/GuestHomepage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3Vlc3RcR3Vlc3RIb21lcGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -92,16 +116,44 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3Vlc3RcTXlCb29raW5ncy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Guest/OurRooms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3Vlc3RcT3VyUm9vbXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Guest/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3Vlc3RcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Guest/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3Vlc3RcUmVzZXRQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Guest/VerifyOtp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3Vlc3RcVmVyaWZ5T3RwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Home/BookRoom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCb29rUm9vbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Home/CheckAvailability.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGVja0F2YWlsYWJpbGl0eS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Home/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXltZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Home/Receipt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWNlaXB0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Shared/AccessDenied.cshtml]
@@ -124,8 +176,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9JbmRleExheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Shared/_StaffLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdGFmZkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Staff/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhZmZcRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/Staff/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhZmZcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/RETRA_HotelSys/RETRA_HotelSys/Views/_ViewImports.cshtml]

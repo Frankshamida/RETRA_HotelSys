@@ -1,5 +1,4 @@
-﻿@model RETRA_HotelSys.Data.HotelGuests
-@using Microsoft.AspNetCore.Identity
+﻿@using Microsoft.AspNetCore.Identity
 @using RETRA_HotelSys.Data
 @inject UserManager<HotelGuests> UserManager
 @{
@@ -40,6 +39,12 @@
                     </a>
                 </li>
                 <li>
+                    <a asp-controller="Guest" asp-action="ViewRooms">
+                        <i class="fas fa-bed"></i>
+                        <span>View Rooms</span>
+                    </a>
+                </li>
+                <li>
                     <a href="#">
                         <i class="fas fa-concierge-bell"></i>
                         <span>Services</span>
@@ -57,10 +62,15 @@
                         <span>Help</span>
                     </a>
                 </li>
+                <li>
+                    <a data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+                        <i class="fas fa-user-lock"></i>
+                        <span>Change Password</span>
+                    </a>
+                </li>
             </ul>
         </nav>
 
-        <!-- User Profile Section -->
         <!-- User Profile Section -->
         <div class="sidebar-profile">
             <div class="profile-avatar" id="userAvatar">@initials</div>
@@ -82,7 +92,6 @@
     <!-- Main Content -->
     <div class="guest-main-content">
         <!-- Welcome Banner -->
-        <!-- Welcome Banner -->
         <div class="welcome-banner">
             <h1>Welcome, <span id="userGreeting">@firstName</span>!</h1>
             <p>We're delighted to have you at Hotel RETRA</p>
@@ -97,8 +106,7 @@
                         <p class="subtitle">Your luxurious experience begins here</p>
                     </div>
 
-                    <form asp-action="CheckAvailability" asp-controller="Home" method="post" class="animated-form">
-                        <!-- Your existing form content -->
+                    <form asp-action="AvailableRooms" asp-controller="Guest" method="post" class="animated-form">
                         <div class="form-grid">
                             <!-- Arrival Date -->
                             <div class="form-group animate-fade-in" style="--delay: 0.1s">
@@ -106,7 +114,7 @@
                                     <span class="label-text">CHECKIN DATE</span>
                                 </label>
                                 <div class="input-container">
-                                    <input type="date" name="checkInDate" required class="date-input">
+                                    <input type="date" name="checkInDate" required class="date-input" min="@DateTime.Now.ToString("yyyy-MM-dd")">
                                     <div class="input-icon"><i class="far fa-calendar"></i></div>
                                     <div class="underline"></div>
                                 </div>
@@ -120,10 +128,10 @@
                                 <div class="custom-select">
                                     <div class="input-icon"><i class="fas fa-user"></i></div>
                                     <select name="numberOfAdults" required>
-                                        <option value="1">1 Adult</option>
-                                        <option value="2">2 Adults</option>
-                                        <option value="3">3 Adults</option>
-                                        <option value="4">4 Adults</option>
+                                        @for (int i = 1; i <= 6; i++)
+                                        {
+                                            <option value="@i">@i Adult@(i > 1 ? "s" : "")</option>
+                                        }
                                     </select>
                                     <div class="select-arrow"><i class="fas fa-chevron-down"></i></div>
                                 </div>
@@ -135,7 +143,7 @@
                                     <span class="label-text">CHECKOUT DATE</span>
                                 </label>
                                 <div class="input-container">
-                                    <input type="date" name="checkOutDate" required class="date-input">
+                                    <input type="date" name="checkOutDate" required class="date-input" min="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")">
                                     <div class="input-icon"><i class="far fa-calendar"></i></div>
                                     <div class="underline"></div>
                                 </div>
@@ -149,9 +157,10 @@
                                 <div class="custom-select">
                                     <div class="input-icon"><i class="fas fa-child"></i></div>
                                     <select name="numberOfChildren">
-                                        <option value="0">None</option>
-                                        <option value="1">1 Child</option>
-                                        <option value="2">2 Children</option>
+                                        @for (int i = 0; i <= 4; i++)
+                                        {
+                                            <option value="@i">@(i == 0 ? "None" : $"{i} Child{(i > 1 ? "ren" : "")}")</option>
+                                        }
                                     </select>
                                     <div class="select-arrow"><i class="fas fa-chevron-down"></i></div>
                                 </div>
@@ -169,6 +178,113 @@
                             </button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Change Password Modal -->
+        <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="changePasswordForm" asp-action="ChangePassword" asp-controller="Guest" method="post">
+                        @Html.AntiForgeryToken()
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="currentPassword" class="form-label">Current Password</label>
+                                <input type="password" class="form-control" id="currentPassword" name="currentPassword" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="newPassword" class="form-label">New Password</label>
+                                <input type="password" class="form-control" id="newPassword" name="newPassword" required>
+                                <div class="form-text">Password must be at least 6 characters</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Change Password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick View Rooms Section -->
+        <div class="quick-view-rooms">
+            <div class="section-header">
+                <h2>Our Luxurious Rooms</h2>
+                <p>Experience comfort and elegance in our carefully designed accommodations</p>
+                <a asp-controller="Guest" asp-action="ViewRooms" class="view-all-btn">View All Rooms</a>
+            </div>
+
+            <div class="rooms-preview">
+                <div class="room-preview-card">
+                    <div class="room-preview-image">
+                        <img src="~/images/rooms/deluxe.jpg" alt="Deluxe Room">
+                        <div class="room-badge">2 Guests</div>
+                    </div>
+                    <div class="room-preview-content">
+                        <h3>Deluxe Room</h3>
+                        <div class="room-price">₱3,500<span>/night</span></div>
+                        <p class="room-description">Spacious room with modern amenities and a comfortable king-sized bed.</p>
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <div class="room-preview-card">
+                    <div class="room-preview-image">
+                        <img src="~/images/rooms/suite.jpg" alt="Executive Suite">
+                        <div class="room-badge">4 Guests</div>
+                    </div>
+                    <div class="room-preview-content">
+                        <h3>Executive Suite</h3>
+                        <div class="room-price">₱5,800<span>/night</span></div>
+                        <p class="room-description">Luxurious suite with separate living area and premium amenities.</p>
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hotel Location Map Section -->
+        <div class="hotel-location-section">
+            <div class="section-header">
+                <h2>Our Location</h2>
+                <p>Find us at the heart of University of Cebu</p>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.234365130083!2d123.89327731528784!3d10.31655819264935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99932389a9b5f%3A0x6b5a5b5b5b5b5b5b!2sUniversity%20of%20Cebu!5e0!3m2!1sen!2sph!4v1620000000000!5m2!1sen!2sph"
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="location-details">
+                <div class="location-info">
+                    <h3>Hotel RETRA at University of Cebu</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Sanciangko St, Cebu City, 6000 Cebu</p>
+                    <p><i class="fas fa-phone"></i> (032) 255 7777</p>
+                    <p><i class="fas fa-envelope"></i> info@hotelretra-uc.edu.ph</p>
+                </div>
+                <div class="transportation-info">
+                    <h4>How to Get Here</h4>
+                    <ul>
+                        <li><i class="fas fa-bus"></i> Public buses stop right outside the university</li>
+                        <li><i class="fas fa-taxi"></i> Taxis available throughout Cebu City</li>
+                        <li><i class="fas fa-car"></i> Ample parking available on campus</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -332,10 +448,309 @@
             color: #666;
         }
 
-    /* Responsive Adjustments */
-    
-</style>
+    /* Quick View Rooms Section */
+    .quick-view-rooms {
+        margin: 50px 0;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
 
+    .section-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+        .section-header h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+    .view-all-btn {
+        display: inline-block;
+        padding: 8px 20px;
+        background-color: #2c3e50;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .view-all-btn:hover {
+            background-color: #d4af37;
+            transform: translateY(-2px);
+        }
+
+    .rooms-preview {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .room-preview-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+        .room-preview-card:hover {
+            transform: translateY(-5px);
+        }
+
+    .room-preview-image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+    }
+
+        .room-preview-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+    .room-preview-card:hover .room-preview-image img {
+        transform: scale(1.05);
+    }
+
+    .room-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(212, 175, 55, 0.9);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+
+    .room-preview-content {
+        padding: 20px;
+    }
+
+        .room-preview-content h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+    .room-price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #d4af37;
+        margin-bottom: 10px;
+    }
+
+        .room-price span {
+            font-size: 0.9rem;
+            color: #777;
+            font-weight: 400;
+        }
+
+    .room-description {
+        color: #555;
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+
+    .btn-outline {
+        display: inline-block;
+        padding: 8px 20px;
+        border: 1px solid #2c3e50;
+        color: #2c3e50;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .btn-outline:hover {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+    /* Hotel Location Section */
+    .hotel-location-section {
+        margin: 50px 0;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .map-container {
+        margin: 30px 0;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .location-details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .location-info h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+    }
+
+    .location-info p {
+        margin-bottom: 10px;
+        color: #555;
+    }
+
+        .location-info p i {
+            margin-right: 10px;
+            color: #d4af37;
+            width: 20px;
+            text-align: center;
+        }
+
+    .transportation-info h4 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+    }
+
+    .transportation-info ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .transportation-info ul li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+            .transportation-info ul li i {
+                margin-right: 10px;
+                color: #d4af37;
+                width: 20px;
+                text-align: center;
+            }
+
+    /* About Section */
+    .about-section {
+        margin: 50px 0;
+    }
+
+        .about-section h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        align-items: center;
+    }
+
+    .about-text p {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .about-image {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+    /* Modal Styles */
+    .modal-content {
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-header {
+        background-color: #2c3e50;
+        color: white;
+        border-radius: 9px 9px 0 0;
+    }
+
+        .modal-header .close {
+            color: white;
+        }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-footer {
+        border-top: 1px solid #eee;
+        padding: 15px 20px;
+    }
+
+    .form-control {
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        padding: 10px 15px;
+        margin-bottom: 15px;
+    }
+
+    .btn-primary {
+        background-color: #d4af37;
+        border-color: #d4af37;
+    }
+
+        .btn-primary:hover {
+            background-color: #c19b2e;
+            border-color: #c19b2e;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+    /* Responsive Adjustments */
+    @@media (max-width: 992px) {
+        .guest-sidebar {
+            width: 250px;
+        }
+
+        .guest-main-content {
+            margin-left: 250px;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .guest-sidebar {
+            width: 100%;
+            position: relative;
+            height: auto;
+        }
+
+        .guest-main-content {
+            margin-left: 0;
+        }
+
+        .rooms-preview {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
 
 @section Scripts {
     <script>
@@ -343,6 +758,30 @@
             // This page was loaded from cache (back button)
             location.reload(true); // Force reload from server
         }
+
+
+        $(document).ready(function() {
+            $('#changePasswordForm').submit(function(e) {
+                e.preventDefault();
+                
+                var newPassword = $('#newPassword').val();
+                var confirmPassword = $('#confirmPassword').val();
+                
+                if (newPassword !== confirmPassword) {
+                    alert('New password and confirmation do not match!');
+                    return false;
+                }
+                
+                if (newPassword.length < 6) {
+                    alert('Password must be at least 6 characters long!');
+                    return false;
+                }
+                
+                // If validation passes, submit the form
+                this.submit();
+            });
+        });
+
+
     </script>
 }
-

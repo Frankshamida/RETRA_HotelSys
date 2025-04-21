@@ -353,6 +353,66 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\8322833f-19b3-4199-8d41-8596b0258e90.png",
+      "PackagePath": "staticwebassets\\uploads\\8322833f-19b3-4199-8d41-8596b0258e90.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\a464eccf-3b3e-48b7-827c-e2c8fcfea60f.png",
+      "PackagePath": "staticwebassets\\uploads\\a464eccf-3b3e-48b7-827c-e2c8fcfea60f.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\0b5b9900-6d42-4ca4-a971-859018dec8ce.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\0b5b9900-6d42-4ca4-a971-859018dec8ce.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\30d476a8-2b55-4002-bce1-31f44b28704f.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\30d476a8-2b55-4002-bce1-31f44b28704f.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\45f076ca-ec7b-43f6-a72e-080231515111.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\45f076ca-ec7b-43f6-a72e-080231515111.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\5d258f76-c732-4e7f-9c7a-1d07a20cb5e3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\5d258f76-c732-4e7f-9c7a-1d07a20cb5e3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\850f35ba-8187-4cfa-a09e-e86e546fc462.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\850f35ba-8187-4cfa-a09e-e86e546fc462.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\8b156566-31e8-4c05-aeea-5311762e596a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\8b156566-31e8-4c05-aeea-5311762e596a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\9637f635-fbee-4bd6-a064-1720cb3d3dcd.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\9637f635-fbee-4bd6-a064-1720cb3d3dcd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\a2deb104-35ad-43f6-bbb5-7124536dd03e.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\a2deb104-35ad-43f6-bbb5-7124536dd03e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\ad8cbd6f-95e0-4cc6-a985-21681945a331.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\ad8cbd6f-95e0-4cc6-a985-21681945a331.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\c916f289-2cd7-4b03-af3a-8e958b91a884.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\c916f289-2cd7-4b03-af3a-8e958b91a884.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\d8a3db1d-f1a1-443d-b748-b5993b2dd312.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\d8a3db1d-f1a1-443d-b748-b5993b2dd312.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\d983eec7-30c9-49df-b1f8-b5d18c6e03ee.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\d983eec7-30c9-49df-b1f8-b5d18c6e03ee.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\e684ad98-2900-409a-901b-931dd0b149e2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\e684ad98-2900-409a-901b-931dd0b149e2.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.RETRA_HotelSys.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

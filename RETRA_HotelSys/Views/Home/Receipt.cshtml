@@ -1,0 +1,75 @@
+﻿@using RETRA_HotelSys.Models.Guest
+@model ReceiptViewModel
+
+@{
+    ViewData["Title"] = "Booking Confirmation";
+}
+
+<div class="container receipt-container">
+    <div class="receipt-header">
+        <h2><i class="fas fa-check-circle text-success"></i> Booking Confirmed</h2>
+        <p class="text-muted">Thank you for your reservation at RETRA Hotel</p>
+    </div>
+
+    <div class="receipt-details">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Reservation Details</h4>
+                <dl class="row">
+                    <dt class="col-sm-4">Reservation ID:</dt>
+                    <dd class="col-sm-8">@Model.ReservationId</dd>
+
+                    <dt class="col-sm-4">Guest Name:</dt>
+                    <dd class="col-sm-8">@Model.GuestName</dd>
+
+                    <dt class="col-sm-4">Room Type:</dt>
+                    <dd class="col-sm-8">@Model.RoomType</dd>
+
+                    <dt class="col-sm-4">Room Number:</dt>
+                    <dd class="col-sm-8">@Model.RoomNumber</dd>
+
+                    <dt class="col-sm-4">Check-in:</dt>
+                    <dd class="col-sm-8">@Model.CheckInDate.ToString("dddd, MMMM dd, yyyy")</dd>
+
+                    <dt class="col-sm-4">Check-out:</dt>
+                    <dd class="col-sm-8">@Model.CheckOutDate.ToString("dddd, MMMM dd, yyyy")</dd>
+
+                    <dt class="col-sm-4">Duration:</dt>
+                    <dd class="col-sm-8">@Model.NumberOfNights nights</dd>
+                </dl>
+            </div>
+
+            <div class="col-md-6">
+                <h4>Payment Details</h4>
+                <dl class="row">
+                    <dt class="col-sm-4">Payment ID:</dt>
+                    <dd class="col-sm-8">@Model.PaymentId</dd>
+
+                    <dt class="col-sm-4">Date Paid:</dt>
+                    <dd class="col-sm-8">@Model.PaymentDate.ToString("g")</dd>
+
+                    <dt class="col-sm-4">Payment Method:</dt>
+                    <dd class="col-sm-8">@Model.PaymentMethod</dd>
+
+                    <dt class="col-sm-4">Transaction ID:</dt>
+                    <dd class="col-sm-8">@Model.TransactionId</dd>
+
+                    <dt class="col-sm-4">Room Rate:</dt>
+                    <dd class="col-sm-8">@Model.BasePrice.ToString("C") per night</dd>
+
+                    <dt class="col-sm-4">Total Amount:</dt>
+                    <dd class="col-sm-8"><strong>@Model.TotalAmount.ToString("C")</strong></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="receipt-actions mt-4">
+        <button class="btn btn-primary" onclick="window.print()">
+            <i class="fas fa-print"></i> Print Receipt
+        </button>
+        <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">
+            <i class="fas fa-home"></i> Back to Home
+        </a>
+    </div>
+</div>

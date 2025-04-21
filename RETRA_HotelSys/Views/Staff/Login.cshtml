@@ -1,0 +1,283 @@
+﻿@model RETRA_HotelSys.Models.StaffLoginViewModel
+@{
+    ViewData["Title"] = "Staff Login";
+    Layout = null; // We'll use a custom layout for login
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Hotel RETRA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --gold-accent: #d4af37;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --success-color: #27ae60;
+            --error-color: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('/images/hotel-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(44, 62, 80, 0.8);
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .login-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+            .login-header h2 {
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+
+            .login-header p {
+                opacity: 0.8;
+                font-size: 0.9rem;
+            }
+
+            .login-header::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: linear-gradient(90deg, var(--gold-accent), transparent);
+            }
+
+        .login-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+            .login-logo img {
+                width: 60px;
+                height: 60px;
+                object-fit: contain;
+            }
+
+        .login-body {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 500;
+                color: var(--dark-gray);
+            }
+
+            .form-group .input-icon {
+                position: absolute;
+                left: 15px;
+                top: 40px;
+                color: var(--primary-color);
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 12px 15px 12px 40px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+            }
+
+                .form-group input:focus {
+                    border-color: var(--primary-color);
+                    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.2);
+                    outline: none;
+                }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+            .remember-me input {
+                margin-right: 10px;
+            }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .login-btn:hover {
+                background-color: var(--secondary-color);
+            }
+
+            .login-btn i {
+                margin-right: 10px;
+            }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+            .login-footer a {
+                color: var(--primary-color);
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+                .login-footer a:hover {
+                    text-decoration: underline;
+                }
+
+        .validation-summary-errors {
+            color: var(--error-color);
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: rgba(231, 76, 60, 0.1);
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .field-validation-error {
+            color: var(--error-color);
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: block;
+        }
+
+        @@keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @@media (max-width: 480px) {
+            .login-container {
+                margin: 20px;
+            }
+
+            .login-body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="login-logo">
+                <img src="/images/5.png" alt="Hotel RETRA Logo">
+            </div>
+            <h2>Staff Portal</h2>
+            <p>Sign in to access your dashboard</p>
+        </div>
+        <div class="login-body">
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="validation-summary-errors">
+                    <span>Please correct the following errors:</span>
+                    <div asp-validation-summary="All"></div>
+                </div>
+            }
+
+            <form asp-action="Login" asp-controller="Staff" method="post">
+                <div class="form-group">
+                    <label asp-for="Username">Username</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <input asp-for="Username" placeholder="Enter your username">
+                    <span asp-validation-for="Username" class="field-validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Password</label>
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <input asp-for="Password" type="password" placeholder="Enter your password">
+                    <span asp-validation-for="Password" class="field-validation-error"></span>
+                </div>
+                <div class="remember-me">
+                    <input asp-for="RememberMe" type="checkbox">
+                    <label asp-for="RememberMe">Remember me</label>
+                </div>
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+            </form>
+            <div class="login-footer">
+                <a href="#">Forgot your password?</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

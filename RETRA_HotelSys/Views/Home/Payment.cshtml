@@ -1,0 +1,82 @@
+﻿@using RETRA_HotelSys.Models.Guest
+@model PaymentViewModel
+@{
+    ViewData["Title"] = "Payment";
+}
+
+<div class="container">
+    <h2>Payment</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5>Reservation Summary</h5>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">Reservation ID:</dt>
+                        <dd class="col-sm-8">@Model.ReservationId</dd>
+
+                        <dt class="col-sm-4">Guest Name:</dt>
+                        <dd class="col-sm-8">@Model.GuestName</dd>
+
+                        <dt class="col-sm-4">Room Type:</dt>
+                        <dd class="col-sm-8">@Model.RoomType</dd>
+
+                        <dt class="col-sm-4">Room Number:</dt>
+                        <dd class="col-sm-8">@Model.RoomNumber</dd>
+
+                        <dt class="col-sm-4">Check-in:</dt>
+                        <dd class="col-sm-8">@Model.CheckInDate.ToString("d")</dd>
+
+                        <dt class="col-sm-4">Check-out:</dt>
+                        <dd class="col-sm-8">@Model.CheckOutDate.ToString("d")</dd>
+
+                        <dt class="col-sm-4">Amount Due:</dt>
+                        <dd class="col-sm-8"><strong>@Model.AmountDue.ToString("C")</strong></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Payment Details</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="ProcessPayment" method="post">
+                        <input type="hidden" asp-for="ReservationId" />
+                        <input type="hidden" asp-for="AmountDue" />
+
+                        <div class="form-group">
+                            <label asp-for="AmountPaid">Amount to Pay</label>
+                            <input asp-for="AmountPaid" class="form-control" value="@Model.AmountDue" />
+                            <span asp-validation-for="AmountPaid" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="PaymentMethod">Payment Method</label>
+                            <select asp-for="PaymentMethod" class="form-control">
+                                <option value="Credit Card">Credit Card</option>
+                                <option value="Debit Card">Debit Card</option>
+                                <option value="Bank Transfer">Bank Transfer</option>
+                                <option value="Cash">Cash</option>
+                            </select>
+                            <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Notes">Payment Notes</label>
+                            <textarea asp-for="Notes" class="form-control" rows="2"></textarea>
+                            <span asp-validation-for="Notes" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Complete Payment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

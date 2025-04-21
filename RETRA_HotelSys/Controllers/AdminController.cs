@@ -13,8 +13,11 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using RETRA_HotelSys.Models.RoomManagement;
 using Microsoft.AspNetCore.Hosting;
+using RoomTypeFeatures = RETRA_HotelSys.Data.RoomTypeFeatures;
+using RETRA_HotelSys.Models.ReservationManagement;
+using RETRA_HotelSys.Models.Guest;
 
-[Authorize(Roles = "Admin")] // Restrict entire controller to Admin role only
+[Authorize(Policy = "AdminOnly")]
 [Route("Admin")] // Set base route for all actions
 [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)] // Disable caching globally for this controller
 public class AdminController : Controller
@@ -484,12 +487,22 @@ public class AdminController : Controller
     [HttpGet("RoomManagement/CreateCategory")]
     public async Task<IActionResult> CreateRoomCategory()
     {
+        var features = await _context.RoomFeatures.ToListAsync();
+
         var model = new CreateRoomCategoryViewModel
         {
-            AllFeatures = await _context.RoomFeatures.ToListAsync()
+            AllFeatures = features.Select(f => new RoomFeatureSelection
+            {
+                AmenityId = f.AmenityId,
+                Name = f.Name,
+                IconClass = f.IconClass,
+                IsSelected = false
+            }).ToList()
         };
+
         return View(model);
     }
+
 
     [HttpPost("RoomManagement/CreateCategory")]
     [ValidateAntiForgeryToken]
@@ -497,21 +510,45 @@ public class AdminController : Controller
     {
         try
         {
-            model.AllFeatures = await _context.RoomFeatures.ToListAsync();
+            // Load features from database
+            var dbFeatures = await _context.RoomFeatures.ToListAsync();
+            model.AllFeatures = dbFeatures.Select(f => new RoomFeatureSelection
+            {
+                AmenityId = f.AmenityId,
+                Name = f.Name,
+                IconClass = f.IconClass,
+                IsSelected = model.SelectedFeatureIds?.Contains(f.AmenityId) ?? false
+            }).ToList();
 
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
 
-            // Check for duplicate category name
-            if (await _context.RoomCategories.AnyAsync(rc => rc.TypeName.ToLower() == model.TypeName.ToLower()))
+            // Handle image upload
+            string imagePath = model.ImageUrl; // Default to URL if provided
+
+            if (model.ImageFile != null && model.ImageFile.Length > 0)
             {
-                ModelState.AddModelError("TypeName", "A room category with this name already exists");
-                return View(model);
+                var uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "uploads", "room-categories");
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
+                var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ImageFile.FileName);
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.ImageFile.CopyToAsync(fileStream);
+                }
+
+                imagePath = $"/uploads/room-categories/{uniqueFileName}";
             }
 
-            var roomCategory = new RoomCategories
+            // Create room category
+            var roomCategory = new RETRA_HotelSys.Data.RoomCategories
             {
                 TypeName = model.TypeName,
                 Description = model.Description,
@@ -519,12 +556,12 @@ public class AdminController : Controller
                 MaxCapacity = model.MaxCapacity,
                 SizeInSqFt = model.SizeInSqFt,
                 BedConfiguration = model.BedConfiguration,
-                MainImagePath = model.MainImagePath,
+                MainImagePath = imagePath,
                 CreatedDate = DateTime.UtcNow
             };
 
             _context.RoomCategories.Add(roomCategory);
-            await _context.SaveChangesAsync(); // Save first to get the ID
+            await _context.SaveChangesAsync();
 
             // Add selected features
             if (model.SelectedFeatureIds != null && model.SelectedFeatureIds.Any())
@@ -538,7 +575,8 @@ public class AdminController : Controller
                         {
                             RoomTypeId = roomCategory.RoomTypeId,
                             AmenityId = featureId,
-                            AdditionalCost = feature.DefaultAdditionalCost
+                            AdditionalCost = feature.DefaultAdditionalCost,
+                            IsIncluded = true
                         });
                     }
                 }
@@ -552,7 +590,17 @@ public class AdminController : Controller
         {
             _logger.LogError(ex, "Error creating room category");
             TempData["ErrorMessage"] = "An error occurred while creating the room category";
-            model.AllFeatures = await _context.RoomFeatures.ToListAsync();
+
+            // Reload features in case of error
+            var dbFeatures = await _context.RoomFeatures.ToListAsync();
+            model.AllFeatures = dbFeatures.Select(f => new RoomFeatureSelection
+            {
+                AmenityId = f.AmenityId,
+                Name = f.Name,
+                IconClass = f.IconClass,
+                IsSelected = false
+            }).ToList();
+
             return View(model);
         }
     }
@@ -595,7 +643,11 @@ public class AdminController : Controller
         {
             if (!ModelState.IsValid)
             {
-                model.AllFeatures = await _context.RoomFeatures.ToListAsync();
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                foreach (var error in errors)
+                {
+                    _logger.LogError($"ModelState Error: {error.ErrorMessage}");
+                }
                 return View(model);
             }
 
@@ -649,7 +701,7 @@ public class AdminController : Controller
                 var feature = await _context.RoomFeatures.FindAsync(featureId);
                 if (feature != null)
                 {
-                    _context.RoomTypeFeatures.Add(new RoomTypeFeatures
+                    _context.RoomTypeFeatures.Add(new RETRA_HotelSys.Data.RoomTypeFeatures
                     {
                         RoomTypeId = id,
                         AmenityId = featureId,
@@ -1095,6 +1147,540 @@ public class AdminController : Controller
         {
             _logger.LogError(ex, "Error uploading image");
             return StatusCode(500, new { success = false, message = "An error occurred while uploading the file." });
+        }
+    }
+
+    // GET: Admin/Reservations
+    [HttpGet("Reservations")]
+    public async Task<IActionResult> Reservations()
+    {
+        try
+        {
+            var reservations = await _context.GuestReservations
+                .Include(r => r.Guest)
+                .Include(r => r.Room)
+                .OrderByDescending(r => r.CheckInDate)
+                .ToListAsync();
+
+            return View("~/Views/Admin/Reservations/Index.cshtml", reservations);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error loading reservations");
+            TempData["ErrorMessage"] = "Error loading reservations";
+            return RedirectToAction("Dashboard");
+        }
+    }
+
+    // GET: Admin/Reservations/Create
+    [HttpGet("Reservations/Create")]
+    public async Task<IActionResult> CreateReservation()
+    {
+        var model = new GuestReservationViewModel
+        {
+            AvailableGuests = await _context.Users.ToListAsync(),
+            AvailableRooms = await _context.HotelRooms
+                .Where(r => r.IsAvailable)
+                .ToListAsync(),
+            CheckInDate = DateTime.Today,
+            CheckOutDate = DateTime.Today.AddDays(1)
+        };
+
+        return View("~/Views/Admin/Reservations/Create.cshtml", model);
+    }
+
+    
+    // POST: Admin/Reservations/Create
+    [HttpPost("Reservations/Create")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> CreateReservation(GuestReservationViewModel model)
+    {
+        try
+        {
+            // Reload dropdown data if validation fails
+            model.AvailableGuests = await _context.Users.ToListAsync();
+            model.AvailableRooms = await _context.HotelRooms
+                .Where(r => r.IsAvailable)
+                .Include(r => r.RoomCategory)
+                .ToListAsync();
+
+            if (!ModelState.IsValid)
+            {
+                // Remove validation errors for dropdown lists before returning view
+                ModelState.Remove("AvailableGuests");
+                ModelState.Remove("AvailableRooms");
+                return View("~/Views/Admin/Reservations/Create.cshtml", model);
+            }
+
+            // Get room with category info
+            var room = await _context.HotelRooms
+                .Include(r => r.RoomCategory)
+                .FirstOrDefaultAsync(r => r.RoomId == model.RoomId);
+
+            if (room == null)
+            {
+                ModelState.AddModelError("RoomId", "Selected room not found");
+                ModelState.Remove("AvailableGuests");
+                ModelState.Remove("AvailableRooms");
+                return View("~/Views/Admin/Reservations/Create.cshtml", model);
+            }
+
+            // Validate dates
+            if (model.CheckInDate >= model.CheckOutDate)
+            {
+                ModelState.AddModelError("CheckOutDate", "Check-out date must be after check-in date");
+                ModelState.Remove("AvailableGuests");
+                ModelState.Remove("AvailableRooms");
+                return View("~/Views/Admin/Reservations/Create.cshtml", model);
+            }
+
+            // Check room availability for the selected dates
+            var isRoomAvailable = !await _context.GuestReservations
+                .AnyAsync(r => r.RoomId == model.RoomId &&
+                              r.BookingStatus == "Confirmed" &&
+                              r.CheckInDate < model.CheckOutDate &&
+                              r.CheckOutDate > model.CheckInDate);
+
+            if (!isRoomAvailable)
+            {
+                ModelState.AddModelError("RoomId", "The room is not available for the selected dates");
+                ModelState.Remove("AvailableGuests");
+                ModelState.Remove("AvailableRooms");
+                return View("~/Views/Admin/Reservations/Create.cshtml", model);
+            }
+
+            // Calculate stay duration and total amount
+            var stayDuration = (model.CheckOutDate - model.CheckInDate).Days;
+            var totalAmount = room.BasePrice * stayDuration;
+
+            // Create reservation
+            var reservation = new RETRA_HotelSys.Data.GuestReservations
+            {
+                GuestId = model.GuestId,
+                RoomId = model.RoomId,
+                CheckInDate = model.CheckInDate,
+                CheckOutDate = model.CheckOutDate,
+                NumberOfAdults = model.NumberOfAdults,
+                NumberOfChildren = model.NumberOfChildren,
+                TotalAmount = totalAmount,
+                SpecialRequests = model.SpecialRequests,
+                BookingStatus = model.BookingStatus,
+                CreatedDate = DateTime.UtcNow,
+                PaymentStatus = model.BookingStatus == "Confirmed" ? "Pending" : "NotRequired"
+            };
+
+            _context.GuestReservations.Add(reservation);
+            await _context.SaveChangesAsync();
+
+            // Add initial status history
+            var statusHistory = new ReservationStatusHistory
+            {
+                ReservationId = reservation.ReservationId,
+                Status = reservation.BookingStatus,
+                ChangeDate = DateTime.UtcNow,
+                Notes = "Reservation created",
+                IsSystemGenerated = true
+            };
+            _context.ReservationStatusHistory.Add(statusHistory);
+
+            // Update room availability if confirmed
+            if (model.BookingStatus == "Confirmed")
+            {
+                room.IsAvailable = false;
+                await _context.SaveChangesAsync();
+            }
+
+            TempData["SuccessMessage"] = "Reservation created successfully!";
+            return RedirectToAction("Reservations");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error creating reservation");
+            TempData["ErrorMessage"] = "Error creating reservation";
+
+            // Reload dropdown data
+            model.AvailableGuests = await _context.Users.ToListAsync();
+            model.AvailableRooms = await _context.HotelRooms
+                .Where(r => r.IsAvailable)
+                .ToListAsync();
+
+            // Remove validation errors for dropdown lists
+            ModelState.Remove("AvailableGuests");
+            ModelState.Remove("AvailableRooms");
+
+            return View("~/Views/Admin/Reservations/Create.cshtml", model);
+        }
+    }
+
+    // GET: Admin/Reservations/Edit/5
+    [HttpGet("Reservations/Edit/{id}")]
+    public async Task<IActionResult> EditReservation(int id)
+    {
+        try
+        {
+            var reservation = await _context.GuestReservations
+                .Include(r => r.Guest)
+                .Include(r => r.Room)
+                .FirstOrDefaultAsync(r => r.ReservationId == id);
+
+            if (reservation == null)
+            {
+                TempData["ErrorMessage"] = "Reservation not found";
+                return RedirectToAction("Reservations");
+            }
+
+            var model = new GuestReservationViewModel
+            {
+                ReservationId = reservation.ReservationId,
+                GuestId = reservation.GuestId,
+                RoomId = reservation.RoomId,
+                CheckInDate = reservation.CheckInDate,
+                CheckOutDate = reservation.CheckOutDate,
+                NumberOfAdults = reservation.NumberOfAdults,
+                NumberOfChildren = reservation.NumberOfChildren,
+                TotalAmount = reservation.TotalAmount,
+                SpecialRequests = reservation.SpecialRequests,
+                BookingStatus = reservation.BookingStatus,
+                AvailableGuests = await _context.Users.ToListAsync(),
+                AvailableRooms = await _context.HotelRooms.ToListAsync()
+            };
+
+            return View("~/Views/Admin/Reservations/Edit.cshtml", model);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"Error loading reservation {id} for edit");
+            TempData["ErrorMessage"] = "Error loading reservation";
+            return RedirectToAction("Reservations");
+        }
+    }
+
+    // POST: Admin/Reservations/Edit/5
+    [HttpPost("Reservations/Edit/{id}")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> EditReservation(int id, GuestReservationViewModel model)
+    {
+        try
+        {
+            if (id != model.ReservationId)
+            {
+                TempData["ErrorMessage"] = "Reservation ID mismatch";
+                return RedirectToAction("Reservations");
+            }
+
+            // Reload dropdown data if validation fails
+            model.AvailableGuests = await _context.Users.ToListAsync();
+            model.AvailableRooms = await _context.HotelRooms.ToListAsync();
+
+            if (!ModelState.IsValid)
+            {
+                return View("~/Views/Admin/Reservations/Edit.cshtml", model);
+            }
+
+            var reservation = await _context.GuestReservations
+                .Include(r => r.Room)
+                .FirstOrDefaultAsync(r => r.ReservationId == id);
+
+            if (reservation == null)
+            {
+                TempData["ErrorMessage"] = "Reservation not found";
+                return RedirectToAction("Reservations");
+            }
+
+            // Validate dates
+            if (model.CheckInDate >= model.CheckOutDate)
+            {
+                ModelState.AddModelError("CheckOutDate", "Check-out date must be after check-in date");
+                return View("~/Views/Admin/Reservations/Edit.cshtml", model);
+            }
+
+            var previousRoom = await _context.HotelRooms.FindAsync(reservation.RoomId);
+            var newRoom = await _context.HotelRooms.FindAsync(model.RoomId);
+
+            if (newRoom == null)
+            {
+                ModelState.AddModelError("RoomId", "Selected room not found");
+                return View("~/Views/Admin/Reservations/Edit.cshtml", model);
+            }
+
+            // Check room availability if changing rooms or dates
+            if (reservation.RoomId != model.RoomId ||
+                reservation.CheckInDate != model.CheckInDate ||
+                reservation.CheckOutDate != model.CheckOutDate)
+            {
+                var isRoomAvailable = !await _context.GuestReservations
+                    .AnyAsync(r => r.RoomId == model.RoomId &&
+                                  r.ReservationId != id &&
+                                  r.BookingStatus == "Confirmed" &&
+                                  r.CheckInDate < model.CheckOutDate &&
+                                  r.CheckOutDate > model.CheckInDate);
+
+                if (!isRoomAvailable)
+                {
+                    ModelState.AddModelError("RoomId", "The room is not available for the selected dates");
+                    return View("~/Views/Admin/Reservations/Edit.cshtml", model);
+                }
+            }
+
+            // Calculate stay duration and total amount
+            var stayDuration = (model.CheckOutDate - model.CheckInDate).Days;
+            var totalAmount = newRoom.BasePrice * stayDuration;
+
+            // Track status changes
+            var statusChanged = reservation.BookingStatus != model.BookingStatus;
+            var previousStatus = reservation.BookingStatus;
+
+            // Update reservation
+            reservation.GuestId = model.GuestId;
+            reservation.RoomId = model.RoomId;
+            reservation.CheckInDate = model.CheckInDate;
+            reservation.CheckOutDate = model.CheckOutDate;
+            reservation.NumberOfAdults = model.NumberOfAdults;
+            reservation.NumberOfChildren = model.NumberOfChildren;
+            reservation.TotalAmount = totalAmount;
+            reservation.SpecialRequests = model.SpecialRequests;
+            reservation.BookingStatus = model.BookingStatus;
+            reservation.ModifiedDate = DateTime.UtcNow;
+
+            // Update room availability
+            if (previousRoom.RoomId != newRoom.RoomId)
+            {
+                if (previousStatus == "Confirmed")
+                {
+                    previousRoom.IsAvailable = true;
+                }
+
+                if (model.BookingStatus == "Confirmed")
+                {
+                    newRoom.IsAvailable = false;
+                }
+            }
+            else
+            {
+                if (previousStatus == "Confirmed" && model.BookingStatus != "Confirmed")
+                {
+                    newRoom.IsAvailable = true;
+                }
+                else if (previousStatus != "Confirmed" && model.BookingStatus == "Confirmed")
+                {
+                    newRoom.IsAvailable = false;
+                }
+            }
+
+            // Add status history if changed
+            if (statusChanged)
+            {
+                var statusHistory = new ReservationStatusHistory
+                {
+                    ReservationId = reservation.ReservationId,
+                    Status = model.BookingStatus,
+                    ChangeDate = DateTime.UtcNow,
+                    Notes = $"Status changed from {previousStatus} to {model.BookingStatus}",
+                    IsSystemGenerated = false
+                };
+                _context.ReservationStatusHistory.Add(statusHistory);
+            }
+
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Reservation updated successfully!";
+            return RedirectToAction("Reservations");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"Error updating reservation {id}");
+            TempData["ErrorMessage"] = "Error updating reservation";
+
+            model.AvailableGuests = await _context.Users.ToListAsync();
+            model.AvailableRooms = await _context.HotelRooms.ToListAsync();
+
+            return View("~/Views/Admin/Reservations/Edit.cshtml", model);
+        }
+    }
+
+    // POST: Admin/Reservations/Cancel/5
+    [HttpPost("Reservations/Cancel/{id}")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> CancelReservation(int id)
+    {
+        try
+        {
+            var reservation = await _context.GuestReservations
+                .Include(r => r.Room)
+                .FirstOrDefaultAsync(r => r.ReservationId == id);
+
+            if (reservation == null)
+            {
+                TempData["ErrorMessage"] = "Reservation not found";
+                return RedirectToAction("Reservations");
+            }
+
+            reservation.BookingStatus = "Cancelled";
+            reservation.CancellationDate = DateTime.UtcNow;
+            reservation.Room.IsAvailable = true;
+
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Reservation cancelled successfully!";
+            return RedirectToAction("Reservations");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"Error cancelling reservation {id}");
+            TempData["ErrorMessage"] = "Error cancelling reservation";
+            return RedirectToAction("Reservations");
+        }
+    }
+
+    [HttpGet("CreateManualReservation")]
+    public async Task<IActionResult> CreateManualReservation()
+    {
+        var model = new ManualReservationViewModel
+        {
+            AvailableRooms = await _context.HotelRooms
+                .Where(r => r.IsAvailable)
+                .Include(r => r.RoomCategory)
+                .ToListAsync(),
+            CheckInDate = DateTime.Today,
+            CheckOutDate = DateTime.Today.AddDays(1)
+        };
+
+        return View(model);
+    }
+
+    [HttpPost("CreateManualReservation")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> CreateManualReservation(ManualReservationViewModel model)
+    {
+        try
+        {
+            // Reload available rooms if validation fails
+            model.AvailableRooms = await _context.HotelRooms
+                .Where(r => r.IsAvailable)
+                .Include(r => r.RoomCategory)
+                .ToListAsync();
+
+            // Remove AvailableRooms from validation
+            ModelState.Remove("AvailableRooms");
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            // Get room with category info
+            var room = await _context.HotelRooms
+                .Include(r => r.RoomCategory)
+                .FirstOrDefaultAsync(r => r.RoomId == model.RoomId);
+
+            if (room == null)
+            {
+                ModelState.AddModelError("RoomId", "Selected room not found");
+                return View(model);
+            }
+
+            // Validate dates
+            if (model.CheckInDate >= model.CheckOutDate)
+            {
+                ModelState.AddModelError("CheckOutDate", "Check-out date must be after check-in date");
+                return View(model);
+            }
+
+            // Check room availability
+            var isRoomAvailable = !await _context.GuestReservations
+                .AnyAsync(r => r.RoomId == model.RoomId &&
+                              r.BookingStatus == "Confirmed" &&
+                              r.CheckInDate < model.CheckOutDate &&
+                              r.CheckOutDate > model.CheckInDate);
+
+            if (!isRoomAvailable)
+            {
+                ModelState.AddModelError("RoomId", "The room is not available for the selected dates");
+                return View(model);
+            }
+
+            // Create or find guest
+            var guest = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.GuestEmail);
+
+            if (guest == null)
+            {
+                guest = new HotelGuests
+                {
+                    UserName = model.GuestEmail,
+                    Email = model.GuestEmail,
+                    FirstName = model.GuestFirstName,
+                    LastName = model.GuestLastName,
+                    PhoneNumber = model.GuestPhone,
+                    RegistrationDate = DateTime.UtcNow,
+                    IsActive = true
+                };
+
+                var result = await _userManager.CreateAsync(guest, "TemporaryPassword123!");
+
+                if (!result.Succeeded)
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                    return View(model);
+                }
+            }
+
+            // Calculate stay duration and total amount
+            var stayDuration = (model.CheckOutDate - model.CheckInDate).Days;
+            var totalAmount = room.BasePrice * stayDuration;
+
+            // Create reservation
+            var reservation = new RETRA_HotelSys.Data.GuestReservations
+            {
+                GuestId = guest.Id,
+                RoomId = model.RoomId,
+                CheckInDate = model.CheckInDate,
+                CheckOutDate = model.CheckOutDate,
+                NumberOfAdults = model.NumberOfAdults,
+                NumberOfChildren = model.NumberOfChildren,
+                TotalAmount = totalAmount,
+                SpecialRequests = model.SpecialRequests,
+                BookingStatus = model.BookingStatus,
+                CreatedDate = DateTime.UtcNow,
+                PaymentStatus = model.BookingStatus == "Confirmed" ? "Pending" : "NotRequired",
+                IsWalkIn = true
+            };
+
+            _context.GuestReservations.Add(reservation);
+            await _context.SaveChangesAsync();
+
+            // Add status history
+            _context.ReservationStatusHistory.Add(new ReservationStatusHistory
+            {
+                ReservationId = reservation.ReservationId,
+                Status = reservation.BookingStatus,
+                ChangeDate = DateTime.UtcNow,
+                Notes = "Walk-in reservation created",
+                IsSystemGenerated = true
+            });
+
+            // Update room availability if confirmed
+            if (model.BookingStatus == "Confirmed")
+            {
+                room.IsAvailable = false;
+                await _context.SaveChangesAsync();
+            }
+
+            TempData["SuccessMessage"] = $"Walk-in reservation created successfully! Guest ID: {guest.Id}";
+            return RedirectToAction("Reservations");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error creating walk-in reservation");
+            TempData["ErrorMessage"] = "Error creating walk-in reservation";
+
+            model.AvailableRooms = await _context.HotelRooms
+                .Where(r => r.IsAvailable)
+                .ToListAsync();
+
+            return View(model);
         }
     }
 

@@ -1,0 +1,68 @@
+﻿@model RETRA_HotelSys.Models.Guest.VerifyOtpViewModel
+
+@{
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+    ViewData["Title"] = "Verify OTP";
+}
+
+@if (TempData["DemoOtp"] != null)
+{
+    <div class="alert alert-modern info">
+        <i class="fas fa-info-circle"></i>
+        DEMO ONLY: Your OTP code is <strong>@TempData["DemoOtp"]</strong>
+    </div>
+}
+
+<div class="login-container">
+    <div class="login-header">
+        <h2>Verify OTP Code</h2>
+        <p>Enter the 6-digit code sent to @Model.Email</p>
+    </div>
+    <div class="otp-timer-container">
+        <div class="otp-timer" id="otpTimer">
+            Code expires in: <span id="countdown">05:00</span>
+        </div>
+    </div>
+    <form asp-action="VerifyOtp" method="post" class="login-form">
+        <input type="hidden" asp-for="Email" />
+
+        <div asp-validation-summary="ModelOnly" class="text-danger validation-summary"></div>
+
+        <div class="form-group-modern">
+            <label asp-for="OtpCode" class="form-label">OTP Code</label>
+            <div class="input-container">
+                <i class="fas fa-key input-icon"></i>
+                <input asp-for="OtpCode" class="form-control-modern" placeholder="Enter 6-digit code" maxlength="6" />
+            </div>
+            <span asp-validation-for="OtpCode" class="text-danger validation-message"></span>
+        </div>
+
+        <button type="submit" class="btn-login">
+            <i class="fas fa-check-circle"></i> Verify Code
+        </button>
+
+        <div class="login-footer">
+            Didn't receive code?
+            <form asp-action="ResendOtp" method="post" style="display: inline;">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="email" value="@Model.Email" />
+                <button type="submit" class="btn-resend">Resend code</button>
+            </form>
+        </div>
+
+        @if (TempData["ResendSuccess"] != null)
+        {
+            <div class="alert alert-modern success mt-3">
+                <i class="fas fa-check-circle"></i> @TempData["ResendSuccess"]
+            </div>
+        }
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+
+}

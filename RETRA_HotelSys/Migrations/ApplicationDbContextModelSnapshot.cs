@@ -183,9 +183,26 @@ namespace RETRA_HotelSys.Migrations
                     b.Property<decimal>("DiscountAmount")
                         .HasColumnType("decimal(18, 2)");
 
+                    b.Property<string>("GuestEmail")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
                     b.Property<string>("GuestId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("GuestName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GuestPhone")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<bool>("IsWalkIn")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
@@ -532,24 +549,26 @@ namespace RETRA_HotelSys.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoomTypeId"));
 
-                    b.Property<string>("AdditionalImagesJson")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<decimal>("BasePrice")
                         .HasColumnType("decimal(18, 2)");
 
                     b.Property<string>("BedConfiguration")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("MainImagePath")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<int>("MaxCapacity")
                         .HasColumnType("int");
@@ -578,13 +597,6 @@ namespace RETRA_HotelSys.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AmenityId"));
 
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CustomIconPath")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
                     b.Property<decimal>("DefaultAdditionalCost")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
@@ -594,16 +606,14 @@ namespace RETRA_HotelSys.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
+                    b.Property<string>("FeatureName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("IconClass")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
-
-                    b.Property<bool>("IsStandardFeature")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()

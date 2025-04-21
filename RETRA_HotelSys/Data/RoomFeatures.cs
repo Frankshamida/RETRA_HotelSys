@@ -20,18 +20,14 @@ namespace RETRA_HotelSys.Data
         [MaxLength(50)]
         public string IconClass { get; set; }
 
-        // Image property for custom icons (alternative to IconClass)
-        [StringLength(255)]
-        public string? CustomIconPath { get; set; } // Path to custom icon/image
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal DefaultAdditionalCost { get; set; }
 
-        public bool IsStandardFeature { get; set; } = false;
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public DateTime? ModifiedDate { get; set; }
+        [NotMapped]
+        public bool IsSelected { get; set; }
 
         // Navigation property
         public virtual ICollection<RoomTypeFeatures> RoomTypeFeatures { get; set; } = new List<RoomTypeFeatures>();
-        
-        [Column(TypeName = "decimal(18,2)")]
-        public decimal DefaultAdditionalCost { get; set; }
+        public string FeatureName { get; internal set; }
     }
 }

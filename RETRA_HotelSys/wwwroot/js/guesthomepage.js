@@ -48,6 +48,25 @@
 
 /*--------------------------------------------------------------SIDEBAR FUNCTION------------------------------------------------------------------------------- */
 
-docu
-});
+        // Set minimum date for check-in to today
+        document.getElementById('CheckInDate').min = new Date().toISOString().split('T')[0];
+
+        // Set minimum date for check-out to tomorrow
+        document.getElementById('CheckOutDate').min = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+
+        // When check-in date changes, update check-out min date
+        document.getElementById('CheckInDate').addEventListener('change', function() {
+            const checkInDate = new Date(this.value);
+        const nextDay = new Date(checkInDate);
+        nextDay.setDate(nextDay.getDate() + 1);
+
+        const checkOutField = document.getElementById('CheckOutDate');
+        checkOutField.min = nextDay.toISOString().split('T')[0];
+
+        // If current check-out is before new min, reset it
+        if (new Date(checkOutField.value) < nextDay) {
+            checkOutField.value = nextDay.toISOString().split('T')[0];
+            }
+        });
+
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------ */

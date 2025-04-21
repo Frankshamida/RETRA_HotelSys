@@ -34,5 +34,6 @@ namespace RETRA_HotelSys.Models.RoomManagement
 
         public List<int> SelectedFeatureIds { get; set; }
         public List<RoomFeatures> AllFeatures { get; set; }
+        public byte[] RowVersion { get; set; }
     }
 }

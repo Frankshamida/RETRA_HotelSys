@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RETRA_HotelSys.Data
 {
+    // Add this to your Data namespace
     public class RoomCategories
     {
         [Key]
@@ -14,23 +15,24 @@ namespace RETRA_HotelSys.Data
         [StringLength(100)]
         public string TypeName { get; set; }
 
-        public string? Description { get; set; }
+        [StringLength(500)]
+        public string Description { get; set; }
 
         [Column(TypeName = "decimal(18,2)")]
         public decimal BasePrice { get; set; }
 
         public int MaxCapacity { get; set; }
+
         public int? SizeInSqFt { get; set; }
-        public string? BedConfiguration { get; set; }
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
+
+        [StringLength(100)]
+        public string BedConfiguration { get; set; }
+
+        [StringLength(500)]
+        public string MainImagePath { get; set; }
+
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
         public DateTime? ModifiedDate { get; set; }
-
-        // Image properties
-        [StringLength(255)]
-        public string? MainImagePath { get; set; } // Path to the main room image
-
-        // For multiple images (consider a separate table if you need many images per room type)
-        public string? AdditionalImagesJson { get; set; } // JSON array of image paths, or consider a separate RoomTypeImages table
 
         // Navigation properties
         public virtual ICollection<HotelRooms> HotelRooms { get; set; } = new List<HotelRooms>();

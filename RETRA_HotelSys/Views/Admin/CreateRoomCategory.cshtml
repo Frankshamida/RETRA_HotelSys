@@ -1,151 +1,138 @@
-﻿@using RETRA_HotelSys.Models.RoomManagement
-@model CreateRoomCategoryViewModel
+﻿@model RETRA_HotelSys.Models.RoomManagement.CreateRoomCategoryViewModel
 
 @{
-    ViewData["Title"] = "Create Room Category";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Create New Room Category";
+    Layout = "_AdminLayout";
 }
 
-<div class="container-fluid">
-    <div class="row mb-4">
-        <div class="col-md-12">
-            <h2>@ViewData["Title"]</h2>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a asp-action="Dashboard">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a asp-action="RoomManagement">Room Management</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Create Category</li>
-                </ol>
-            </nav>
-        </div>
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex justify-content-between align-items-center">
+        <h6 class="m-0 font-weight-bold text-primary">@ViewData["Title"]</h6>
+        <a asp-action="RoomManagement" class="btn btn-secondary btn-sm">Back to List</a>
     </div>
+    <div class="card-body">
+        <form asp-action="CreateRoomCategory" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-    <div class="row">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    <h4>New Room Category</h4>
+            <div class="row">
+                <!-- Basic Information Column -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="TypeName" class="control-label"></label>
+                        <input asp-for="TypeName" class="form-control" />
+                        <span asp-validation-for="TypeName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="SelectedRoomType" class="control-label"></label>
+                        <select asp-for="SelectedRoomType" asp-items="Model.RoomTypes" class="form-control">
+                            <option value="">-- Select Room Type --</option>
+                        </select>
+                        <span asp-validation-for="SelectedRoomType" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="BasePrice" class="control-label"></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">₱</span>
+                            </div>
+                            <input asp-for="BasePrice" class="form-control" />
+                        </div>
+                        <span asp-validation-for="BasePrice" class="text-danger"></span>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <form asp-action="CreateRoomCategory" method="post">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-                        <!-- Basic Info -->
-                        <div class="form-group">
-                            <label asp-for="TypeName" class="control-label"></label>
-                            <input asp-for="TypeName" class="form-control" />
-                            <span asp-validation-for="TypeName" class="text-danger"></span>
-                        </div>
+                <!-- Room Specifications Column -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="MaxCapacity" class="control-label"></label>
+                        <input asp-for="MaxCapacity" class="form-control" />
+                        <span asp-validation-for="MaxCapacity" class="text-danger"></span>
+                    </div>
 
-                        <div class="form-group">
-                            <label asp-for="Description" class="control-label"></label>
-                            <textarea asp-for="Description" class="form-control" rows="3"></textarea>
-                            <span asp-validation-for="Description" class="text-danger"></span>
-                        </div>
-
-                        <!-- Pricing & Capacity -->
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label asp-for="BasePrice" class="control-label"></label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">$</span>
-                                    </div>
-                                    <input asp-for="BasePrice" class="form-control" />
-                                </div>
-                                <span asp-validation-for="BasePrice" class="text-danger"></span>
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <label asp-for="MaxCapacity" class="control-label"></label>
-                                <input asp-for="MaxCapacity" class="form-control" />
-                                <span asp-validation-for="MaxCapacity" class="text-danger"></span>
+                    <div class="form-group">
+                        <label asp-for="SizeInSqFt" class="control-label"></label>
+                        <div class="input-group">
+                            <input asp-for="SizeInSqFt" class="form-control" />
+                            <div class="input-group-append">
+                                <span class="input-group-text">sq ft</span>
                             </div>
                         </div>
+                        <span asp-validation-for="SizeInSqFt" class="text-danger"></span>
+                    </div>
 
-                        <!-- Room Details -->
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label asp-for="SizeInSqFt" class="control-label"></label>
-                                <div class="input-group">
-                                    <input asp-for="SizeInSqFt" class="form-control" />
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">sq ft</span>
-                                    </div>
-                                </div>
-                                <span asp-validation-for="SizeInSqFt" class="text-danger"></span>
-                            </div>
+                    <div class="form-group">
+                        <label asp-for="BedConfiguration" class="control-label"></label>
+                        <input asp-for="BedConfiguration" class="form-control" placeholder="e.g. 1 King, 2 Queens" />
+                        <span asp-validation-for="BedConfiguration" class="text-danger"></span>
+                    </div>
 
-                            <div class="form-group col-md-6">
-                                <label asp-for="BedConfiguration" class="control-label"></label>
-                                <input asp-for="BedConfiguration" class="form-control" placeholder="e.g., 1 King Bed" />
-                                <span asp-validation-for="BedConfiguration" class="text-danger"></span>
-                            </div>
+                    <div class="form-group">
+                        <label asp-for="ImageUrl" class="control-label"></label>
+                        <input asp-for="ImageUrl" class="form-control" placeholder="Enter image URL (e.g., https://example.com/image.jpg)" />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                        <small class="form-text text-muted">Or upload an image below</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ImageFile" class="control-label">Upload Image (alternative)</label>
+                        <div class="custom-file">
+                            <input asp-for="ImageFile" class="custom-file-input" id="customFile" accept="image/*">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
                         </div>
-
-                        <!-- Image Upload -->
-                        <div class="form-group">
-                            <label asp-for="MainImagePath" class="control-label"></label>
-                            <input asp-for="MainImagePath" class="form-control" placeholder="URL or path to image" />
-                            <small class="form-text text-muted">Example: /images/rooms/deluxe-room.jpg</small>
-                            <span asp-validation-for="MainImagePath" class="text-danger"></span>
-                        </div>
-
-                        <!-- Features Selection -->
-                        <div class="form-group">
-                            <label class="control-label">Room Features</label>
-                            <div class="feature-selection">
-                                @foreach (var feature in Model.AllFeatures)
-                                {
-                                    <div class="form-check">
-                                        <input class="form-check-input"
-                                               type="checkbox"
-                                               name="SelectedFeatureIds"
-                                               value="@feature.AmenityId"
-                                               id="feature-@feature.AmenityId"
-                                        @(Model.SelectedFeatureIds != null && Model.SelectedFeatureIds.Contains(feature.AmenityId) ? "checked" : "")>
-                                        <label class="form-check-label" for="feature-@feature.AmenityId">
-                                            @if (!string.IsNullOrEmpty(feature.IconClass))
-                                            {
-                                                <i class="@feature.IconClass"></i>
-                                            }
-                                            @feature.Name
-                                        </label>
-                                    </div>
-                                }
-                            </div>
-                        </div>
-
-                        <!-- Submit & Cancel -->
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-save"></i> Create Category
-                            </button>
-                            <a asp-action="RoomManagement" class="btn btn-secondary">
-                                <i class="fas fa-times"></i> Cancel
-                            </a>
-                        </div>
-                    </form>
+                        <span asp-validation-for="ImageFile" class="text-danger"></span>
+                        <small class="form-text text-muted">Recommended size: 800x600px, max 2MB</small>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Help Section -->
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    <h5><i class="fas fa-info-circle"></i> Creating Room Categories</h5>
-                </div>
-                <div class="card-body">
-                    <p>Room categories define the different types of rooms available in your hotel (e.g., Standard, Deluxe, Suite).</p>
-                    <ul>
-                        <li><strong>Base Price:</strong> The standard rate for this room type.</li>
-                        <li><strong>Features:</strong> Select amenities that apply to this room type.</li>
-                        <li><strong>Image:</strong> Add a representative image for this category.</li>
-                    </ul>
+            <!-- Room Features Section -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h5 class="mb-3">Room Features & Amenities</h5>
+                    <div class="row">
+                        @for (int i = 0; i < Model.AllFeatures.Count; i++)
+                        {
+                            <div class="col-md-4 mb-3">
+                                <div class="feature-card card h-100">
+                                    <div class="card-body">
+                                        <div class="form-check">
+                                            <input type="checkbox"
+                                                   class="form-check-input"
+                                                   id="feature_@Model.AllFeatures[i].AmenityId"
+                                                   name="SelectedFeatureIds"
+                                                   value="@Model.AllFeatures[i].AmenityId"
+                                            @(Model.AllFeatures[i].IsSelected ? "checked" : "") />
+                                            <input type="hidden" asp-for="@Model.AllFeatures[i].AmenityId" />
+                                            <input type="hidden" asp-for="@Model.AllFeatures[i].Name" />
+                                            <input type="hidden" asp-for="@Model.AllFeatures[i].IconClass" />
+                                            <label class="form-check-label" for="feature_@Model.AllFeatures[i].AmenityId">
+                                                <i class="@Model.AllFeatures[i].IconClass mr-2"></i>
+                                                @Model.AllFeatures[i].Name
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <div class="form-group mt-4">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save mr-2"></i>Create Category
+                </button>
+                <a asp-action="RoomManagement" class="btn btn-link">Cancel</a>
+            </div>
+        </form>
     </div>
 </div>
 
@@ -153,4 +140,72 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    <script>
+        // Update file input label with selected file name
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+
+            // Show image preview
+            var file = $(this)[0].files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $("#previewImage").attr("src", e.target.result);
+                    $("#imagePreview").show();
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+                function showImagePreview(source) {
+            var preview = $("#previewImage");
+            var previewDiv = $("#imagePreview");
+
+            if (source) {
+                preview.attr("src", source);
+                previewDiv.show();
+            } else {
+                previewDiv.hide();
+            }
+        }
+
+        // For URL input
+        $("#ImageUrl").on("input", function() {
+            showImagePreview($(this).val());
+        });
+
+        // For file input (keep your existing code)
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+
+            // Show image preview
+            var file = $(this)[0].files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    showImagePreview(e.target.result);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+    <style>
+        .feature-card:hover {
+            border-color: #4e73df;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+        }
+
+        .feature-card .card-body {
+            padding: 1rem;
+        }
+
+        .form-check-label {
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
 }

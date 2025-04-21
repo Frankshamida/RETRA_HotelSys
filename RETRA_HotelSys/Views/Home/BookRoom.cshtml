@@ -1,0 +1,177 @@
+﻿@using RETRA_HotelSys.Models.Guest
+@model BookingViewModel
+@{
+    ViewData["Title"] = "Book Room";
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+    
+}
+
+<div class="container">
+    <h2>Complete Your Booking</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <img src="@Model.RoomImage" class="card-img-top" alt="@Model.RoomTypeName">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.RoomTypeName - Room @Model.RoomNumber</h5>
+                    <p class="card-text">@Model.BedConfiguration</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Check-in:</strong> @Model.CheckInDate.ToString("d")</li>
+                        <li class="list-group-item"><strong>Check-out:</strong> @Model.CheckOutDate.ToString("d")</li>
+                        <li class="list-group-item"><strong>Duration:</strong> @Model.TotalNights nights</li>
+                        <li class="list-group-item"><strong>Guests:</strong> @Model.NumberOfAdults adults, @Model.NumberOfChildren children</li>
+                        <li class="list-group-item"><strong>Rate:</strong> @Model.BasePrice.ToString("C") per night</li>
+                        <li class="list-group-item"><strong>Total:</strong> <span class="h5">@Model.TotalPrice.ToString("C")</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Guest Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="ConfirmBooking" method="post">
+                            <input type="hidden" asp-for="RoomTypeId" />
+                            <input type="hidden" asp-for="RoomId" />
+                            <input type="hidden" asp-for="RoomNumber" />
+                            <input type="hidden" asp-for="CheckInDate" />
+                            <input type="hidden" asp-for="CheckOutDate" />
+                            <input type="hidden" asp-for="NumberOfAdults" />
+                            <input type="hidden" asp-for="NumberOfChildren" />
+                            <input type="hidden" asp-for="BasePrice" />
+                            <input type="hidden" asp-for="TotalNights" />
+                            <input type="hidden" asp-for="TotalPrice" />
+
+                            <div class="form-group">
+                                <label asp-for="SpecialRequests">Special Requests</label>
+                                <textarea asp-for="SpecialRequests" class="form-control" rows="3"></textarea>
+                                <span asp-validation-for="SpecialRequests" class="text-danger"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Proceed to Payment</button>
+                        </form>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Guest Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="auth-options mb-4">
+                            <button class="btn btn-outline-primary btn-block" data-bs-toggle="collapse" data-bs-target="#loginForm">
+                                Already have an account? Sign In
+                            </button>
+
+                        </div>
+
+                        <div id="loginForm" class="collapse mb-4">
+                            <form asp-action="Login" asp-controller="Account" method="post" class="border p-3 rounded">
+                                <input type="hidden" name="returnUrl" value="@Url.Action("BookRoom", "Home", new { roomTypeId = Model.RoomTypeId })" />
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" name="email" class="form-control" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" name="password" class="form-control" required />
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                            </form>
+                        </div>
+
+                        <h6 class="text-center mb-3">- OR -</h6>
+
+                        <form asp-action="GuestInformation" method="post" id="guestInfoForm">
+                            <!-- Add this to ensure form validation works -->
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <input type="hidden" asp-for="RoomTypeId" />
+                            <input type="hidden" asp-for="RoomId" />
+                            <input type="hidden" asp-for="RoomNumber" />
+                            <input type="hidden" asp-for="CheckInDate" />
+                            <input type="hidden" asp-for="CheckOutDate" />
+                            <input type="hidden" asp-for="NumberOfAdults" />
+                            <input type="hidden" asp-for="NumberOfChildren" />
+                            <input type="hidden" asp-for="BasePrice" />
+                            <input type="hidden" asp-for="TotalNights" />
+                            <input type="hidden" asp-for="TotalPrice" />
+
+                            <div class="form-group">
+                                <label asp-for="GuestEmail">Email Address</label>
+                                <input asp-for="GuestEmail" class="form-control" required />
+                                <span asp-validation-for="GuestEmail" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="FirstName">First Name</label>
+                                <input asp-for="FirstName" class="form-control" required />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="LastName">Last Name</label>
+                                <input asp-for="LastName" class="form-control" required />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="PhoneNumber">Phone Number</label>
+                                <input asp-for="PhoneNumber" class="form-control" required />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Address">Address</label>
+                                <input asp-for="Address" class="form-control" />
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="SpecialRequests">Special Requests</label>
+                                <textarea asp-for="SpecialRequests" class="form-control" rows="3"></textarea>
+                                <span asp-validation-for="SpecialRequests" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="createAccount" name="createAccount">
+                                <label class="form-check-label" for="createAccount">Create an account for faster booking next time</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Proceed to Payment</button>
+                        </form>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Handle form submission
+            $('#guestInfoForm').on('submit', function(e) {
+                if (!this.checkValidity()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                $(this).addClass('was-validated');
+            });
+
+            // Initialize Bootstrap collapse for login form
+            $('[data-toggle="collapse"]').click(function() {
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+}

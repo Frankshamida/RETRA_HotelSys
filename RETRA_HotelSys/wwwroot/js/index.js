@@ -31,3 +31,64 @@ $(document).ready(function () {
     });
 });
 /*-------------------------------------------------------------------------------------------------------------- */
+
+// OTP Countdown Timer (5 minutes)
+let timeLeft = 300; // 5 minutes in seconds
+const timerElement = document.getElementById('countdown');
+
+const countdown = setInterval(() => {
+    timeLeft--;
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+
+    timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+    if (timeLeft <= 0) {
+        clearInterval(countdown);
+        timerElement.textContent = "Expired";
+        timerElement.style.color = "#dc3545";
+        document.querySelector('button[type="submit"]').disabled = true;
+    }
+}, 1000);
+
+
+/*-------------------------------------------------------------------------------------------------------------- */
+
+document.addEventListener('DOMContentLoaded', function () {
+    const passwordInput = document.getElementById('passwordInput');
+    const strengthBar = document.getElementById('strengthBar');
+    const strengthText = document.getElementById('strengthText');
+
+    passwordInput.addEventListener('input', function () {
+        const strength = checkPasswordStrength(this.value);
+        updateStrengthMeter(strength);
+    });
+
+    function checkPasswordStrength(password) {
+        // Criteria checks
+        const hasMinLength = password.length >= 8;
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        const hasNumbers = /\d/.test(password);
+        const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+        // Calculate strength (0-4)
+        let strength = 0;
+        if (hasMinLength) strength++;
+        if (hasUpperCase) strength++;
+        if (hasLowerCase) strength++;
+        if (hasNumbers) strength++;
+        if (hasSpecial) strength++;
+
+        return strength;
+    }
+
+    function updateStrengthMeter(strength) {
+        const colors = ['#dc3545', '#ffc107', '#ffc107', '#28a745', '#28a745'];
+        const texts = ['Very Weak', 'Weak', 'Moderate', 'Strong', 'Very Strong'];
+
+        strengthBar.style.width = `${(strength / 4) * 100}%`;
+        strengthBar.style.background = colors[strength] || '#dc3545';
+        strengthText.textContent = texts[strength] || 'Very Weak';
+    }
+});

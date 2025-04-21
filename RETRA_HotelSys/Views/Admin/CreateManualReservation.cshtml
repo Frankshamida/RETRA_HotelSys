@@ -1,0 +1,171 @@
+﻿@model RETRA_HotelSys.Models.Guest.ManualReservationViewModel
+@{
+    ViewData["Title"] = "Create Walk-in Reservation";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">@ViewData["Title"]</h6>
+    </div>
+    <div class="card-body">
+        <form asp-action="CreateManualReservation" method="post" id="reservationForm">
+            <div asp-validation-summary="All" class="alert alert-danger"></div>
+
+            <h5 class="mb-3">Guest Information</h5>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="GuestFirstName" class="control-label"></label>
+                        <input asp-for="GuestFirstName" class="form-control" required />
+                        <span asp-validation-for="GuestFirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="GuestLastName" class="control-label"></label>
+                        <input asp-for="GuestLastName" class="form-control" required />
+                        <span asp-validation-for="GuestLastName" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="GuestEmail" class="control-label"></label>
+                        <input asp-for="GuestEmail" class="form-control" type="email" required />
+                        <span asp-validation-for="GuestEmail" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="GuestPhone" class="control-label"></label>
+                        <input asp-for="GuestPhone" class="form-control" required />
+                        <span asp-validation-for="GuestPhone" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4" />
+            <h5 class="mb-3">Reservation Details</h5>
+
+            <div class="form-group">
+                <label asp-for="RoomId" class="control-label"></label>
+                <select asp-for="RoomId" class="form-control" required>
+                    <option value="">-- Select Room --</option>
+                    @foreach (var room in Model.AvailableRooms)
+                    {
+                        <option value="@room.RoomId" data-price="@room.BasePrice">
+                            @room.RoomNumber - @room.RoomType (@room.BasePrice.ToString("C")/night)
+                        </option>
+                    }
+                </select>
+                <span asp-validation-for="RoomId" class="text-danger"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="CheckInDate" class="control-label"></label>
+                        <input asp-for="CheckInDate" class="form-control" type="date"
+                               min="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                        <span asp-validation-for="CheckInDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="CheckOutDate" class="control-label"></label>
+                        <input asp-for="CheckOutDate" class="form-control" type="date"
+                               min="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" />
+                        <span asp-validation-for="CheckOutDate" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="NumberOfAdults" class="control-label"></label>
+                        <input asp-for="NumberOfAdults" class="form-control" min="1" max="10" value="1" />
+                        <span asp-validation-for="NumberOfAdults" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="NumberOfChildren" class="control-label"></label>
+                        <input asp-for="NumberOfChildren" class="form-control" min="0" max="10" value="0" />
+                        <span asp-validation-for="NumberOfChildren" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SpecialRequests" class="control-label"></label>
+                <textarea asp-for="SpecialRequests" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="SpecialRequests" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BookingStatus" class="control-label"></label>
+                <select asp-for="BookingStatus" class="form-control">
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Pending">Pending</option>
+                </select>
+                <span asp-validation-for="BookingStatus" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Estimated Total</label>
+                <input type="text" class="form-control" id="displayTotal" readonly />
+                <input type="hidden" asp-for="TotalAmount" id="totalAmount" />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Create Reservation
+                </button>
+                <a asp-action="Reservations" class="btn btn-secondary">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function() {
+            // Calculate total amount
+            function calculateTotal() {
+                var roomId = $('#RoomId').val();
+                var selectedRoom = $('#RoomId option:selected');
+                var roomPrice = parseFloat(selectedRoom.data('price')) || 0;
+
+                var checkInDate = new Date($('#CheckInDate').val());
+                var checkOutDate = new Date($('#CheckOutDate').val());
+
+                if (roomId && checkInDate && checkOutDate && checkOutDate > checkInDate) {
+                    var days = (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24);
+                    var total = (roomPrice * days).toFixed(2);
+
+                    $('#displayTotal').val('$' + total);
+                    $('#totalAmount').val(total);
+                } else {
+                    $('#displayTotal').val('');
+                    $('#totalAmount').val('');
+                }
+            }
+
+            // Initialize calculation
+            calculateTotal();
+
+            // Recalculate when inputs change
+            $('#RoomId, #CheckInDate, #CheckOutDate').change(calculateTotal);
+        });
+    </script>
+}
