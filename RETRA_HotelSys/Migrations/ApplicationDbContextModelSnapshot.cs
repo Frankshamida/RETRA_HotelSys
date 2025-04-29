@@ -194,7 +194,8 @@ namespace RETRA_HotelSys.Migrations
 
                     b.Property<string>("GuestName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("GuestPhone")
                         .IsRequired()
@@ -458,6 +459,7 @@ namespace RETRA_HotelSys.Migrations
                         .HasColumnType("decimal(18, 2)");
 
                     b.Property<string>("Notes")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("PaymentDate")
@@ -469,6 +471,7 @@ namespace RETRA_HotelSys.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("PaymentReference")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ProcessedBy")

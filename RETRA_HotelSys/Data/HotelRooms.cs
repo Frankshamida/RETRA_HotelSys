@@ -69,5 +69,6 @@ namespace RETRA_HotelSys.Data
         public string Notes { get; internal set; }
         public DateTime ModifiedDate { get; internal set; }
         public bool IsActive { get; internal set; }
+        public string RoomName { get; internal set; }
     }
 }

@@ -1,416 +1,428 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\RETRA_HotelSys.bundle.scp.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\RETRA_HotelSys.bundle.scp.css",
       "PackagePath": "staticwebassets\\RETRA_HotelSys.htwb1vjum5.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\admin.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\admin.css",
       "PackagePath": "staticwebassets\\css\\admin.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\guesthomepage.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\guesthomepage.css",
       "PackagePath": "staticwebassets\\css\\guesthomepage.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\index.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\index.css",
       "PackagePath": "staticwebassets\\css\\index.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\site.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\favicon.ico",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\1.png",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\1.png",
       "PackagePath": "staticwebassets\\images\\1.png"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\2.png",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\2.png",
       "PackagePath": "staticwebassets\\images\\2.png"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\3.png",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\3.png",
       "PackagePath": "staticwebassets\\images\\3.png"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\4.png",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\4.png",
       "PackagePath": "staticwebassets\\images\\4.png"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\5.png",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\5.png",
       "PackagePath": "staticwebassets\\images\\5.png"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\6.png",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\6.png",
       "PackagePath": "staticwebassets\\images\\6.png"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\7.png",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\7.png",
       "PackagePath": "staticwebassets\\images\\7.png"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\Team1.JPG",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\Team1.JPG",
       "PackagePath": "staticwebassets\\images\\Team1.JPG"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\account.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\account.jpg",
       "PackagePath": "staticwebassets\\images\\account.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\deluxe.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\deluxe.jpg",
       "PackagePath": "staticwebassets\\images\\deluxe.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\homepage.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\homepage.jpg",
       "PackagePath": "staticwebassets\\images\\homepage.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\lobby.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\lobby.jpg",
       "PackagePath": "staticwebassets\\images\\lobby.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\magellanscross.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\magellanscross.jpg",
       "PackagePath": "staticwebassets\\images\\magellanscross.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\standard.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\standard.jpg",
       "PackagePath": "staticwebassets\\images\\standard.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\suite.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\suite.jpg",
       "PackagePath": "staticwebassets\\images\\suite.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\team2.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\team2.jpg",
       "PackagePath": "staticwebassets\\images\\team2.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\team3.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\team3.jpg",
       "PackagePath": "staticwebassets\\images\\team3.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\team4.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\team4.jpg",
       "PackagePath": "staticwebassets\\images\\team4.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\team5.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\images\\team5.jpg",
       "PackagePath": "staticwebassets\\images\\team5.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\js\\guesthomepage.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\js\\guesthomepage.js",
       "PackagePath": "staticwebassets\\js\\guesthomepage.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\js\\index.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\js\\index.js",
       "PackagePath": "staticwebassets\\js\\index.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\js\\site.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\8322833f-19b3-4199-8d41-8596b0258e90.png",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\8322833f-19b3-4199-8d41-8596b0258e90.png",
       "PackagePath": "staticwebassets\\uploads\\8322833f-19b3-4199-8d41-8596b0258e90.png"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\a464eccf-3b3e-48b7-827c-e2c8fcfea60f.png",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\a464eccf-3b3e-48b7-827c-e2c8fcfea60f.png",
       "PackagePath": "staticwebassets\\uploads\\a464eccf-3b3e-48b7-827c-e2c8fcfea60f.png"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\0b5b9900-6d42-4ca4-a971-859018dec8ce.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\0b5b9900-6d42-4ca4-a971-859018dec8ce.jpg",
       "PackagePath": "staticwebassets\\uploads\\room-categories\\0b5b9900-6d42-4ca4-a971-859018dec8ce.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\30d476a8-2b55-4002-bce1-31f44b28704f.jpeg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\30d476a8-2b55-4002-bce1-31f44b28704f.jpeg",
       "PackagePath": "staticwebassets\\uploads\\room-categories\\30d476a8-2b55-4002-bce1-31f44b28704f.jpeg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\45f076ca-ec7b-43f6-a72e-080231515111.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\45f076ca-ec7b-43f6-a72e-080231515111.jpg",
       "PackagePath": "staticwebassets\\uploads\\room-categories\\45f076ca-ec7b-43f6-a72e-080231515111.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\5d258f76-c732-4e7f-9c7a-1d07a20cb5e3.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\5d258f76-c732-4e7f-9c7a-1d07a20cb5e3.jpg",
       "PackagePath": "staticwebassets\\uploads\\room-categories\\5d258f76-c732-4e7f-9c7a-1d07a20cb5e3.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\850f35ba-8187-4cfa-a09e-e86e546fc462.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\79593a58-bf0d-4b49-93a6-ed7ecb0c7f74.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\79593a58-bf0d-4b49-93a6-ed7ecb0c7f74.jpg"
+    },
+    {
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\850f35ba-8187-4cfa-a09e-e86e546fc462.jpg",
       "PackagePath": "staticwebassets\\uploads\\room-categories\\850f35ba-8187-4cfa-a09e-e86e546fc462.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\8b156566-31e8-4c05-aeea-5311762e596a.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\8b156566-31e8-4c05-aeea-5311762e596a.jpg",
       "PackagePath": "staticwebassets\\uploads\\room-categories\\8b156566-31e8-4c05-aeea-5311762e596a.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\9637f635-fbee-4bd6-a064-1720cb3d3dcd.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\9637f635-fbee-4bd6-a064-1720cb3d3dcd.jpg",
       "PackagePath": "staticwebassets\\uploads\\room-categories\\9637f635-fbee-4bd6-a064-1720cb3d3dcd.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\a2deb104-35ad-43f6-bbb5-7124536dd03e.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\a2deb104-35ad-43f6-bbb5-7124536dd03e.jpg",
       "PackagePath": "staticwebassets\\uploads\\room-categories\\a2deb104-35ad-43f6-bbb5-7124536dd03e.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\ad8cbd6f-95e0-4cc6-a985-21681945a331.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\ad8cbd6f-95e0-4cc6-a985-21681945a331.jpg",
       "PackagePath": "staticwebassets\\uploads\\room-categories\\ad8cbd6f-95e0-4cc6-a985-21681945a331.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\c916f289-2cd7-4b03-af3a-8e958b91a884.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\c916f289-2cd7-4b03-af3a-8e958b91a884.jpg",
       "PackagePath": "staticwebassets\\uploads\\room-categories\\c916f289-2cd7-4b03-af3a-8e958b91a884.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\d8a3db1d-f1a1-443d-b748-b5993b2dd312.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\d84158d5-a3a7-4f10-9cae-61cb97291c12.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\d84158d5-a3a7-4f10-9cae-61cb97291c12.jpg"
+    },
+    {
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\d8a3db1d-f1a1-443d-b748-b5993b2dd312.jpg",
       "PackagePath": "staticwebassets\\uploads\\room-categories\\d8a3db1d-f1a1-443d-b748-b5993b2dd312.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\d983eec7-30c9-49df-b1f8-b5d18c6e03ee.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\d983eec7-30c9-49df-b1f8-b5d18c6e03ee.jpg",
       "PackagePath": "staticwebassets\\uploads\\room-categories\\d983eec7-30c9-49df-b1f8-b5d18c6e03ee.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\e684ad98-2900-409a-901b-931dd0b149e2.jpg",
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\e684ad98-2900-409a-901b-931dd0b149e2.jpg",
       "PackagePath": "staticwebassets\\uploads\\room-categories\\e684ad98-2900-409a-901b-931dd0b149e2.jpg"
+    },
+    {
+      "Id": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\wwwroot\\uploads\\room-categories\\ec784eab-29bd-4dd0-9b67-dc09e5bb55c3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\room-categories\\ec784eab-29bd-4dd0-9b67-dc09e5bb55c3.jpg"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.RETRA_HotelSys.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

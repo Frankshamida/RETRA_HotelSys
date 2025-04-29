@@ -57,8 +57,14 @@ namespace RETRA_HotelSys.Data
         [NotMapped]
         public object ReservationStatus { get; internal set; }
         public bool IsWalkIn { get; internal set; }
+        
+        [StringLength(20)]
+        public string GuestPhone { get; set; } // Make sure this is set
+
+        [StringLength(100)]
+        public string GuestName { get; set; }
+
+        [StringLength(100)]
         public string GuestEmail { get; set; }
-        public string GuestName { get; internal set; }
-        public string GuestPhone { get; set; }
     }
 }

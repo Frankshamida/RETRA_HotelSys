@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Mvc;
 using RETRA_HotelSys.Data;
 
@@ -26,9 +27,14 @@ namespace RETRA_HotelSys.Models.Guest
         public string PaymentStatus { get; set; } = "Pending"; // Default to Pending
 
         // For non-registered guests
-        public string? GuestEmail { get; set; }
-        public string? GuestName { get; set; }
-        public string? GuestPhone { get; set; }
+        [StringLength(20)]
+        public string GuestPhone { get; set; } // Make sure this is set
+
+        [StringLength(100)]
+        public string GuestName { get; set; }
+
+        [StringLength(100)]
+        public string GuestEmail { get; set; }
 
         // Navigation properties
         public HotelGuests? Guest { get; set; }

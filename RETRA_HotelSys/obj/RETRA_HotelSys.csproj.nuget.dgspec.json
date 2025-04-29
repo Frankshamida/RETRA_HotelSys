@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\RETRA_HotelSys.csproj": {}
+    "D:\\RETRA_HotelSys\\RETRA_HotelSys\\RETRA_HotelSys.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\RETRA_HotelSys.csproj": {
+    "D:\\RETRA_HotelSys\\RETRA_HotelSys\\RETRA_HotelSys.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\RETRA_HotelSys.csproj",
+        "projectUniqueName": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\RETRA_HotelSys.csproj",
         "projectName": "RETRA_HotelSys",
-        "projectPath": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\RETRA_HotelSys.csproj",
+        "projectPath": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\RETRA_HotelSys.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\",
+        "outputPath": "D:\\RETRA_HotelSys\\RETRA_HotelSys\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

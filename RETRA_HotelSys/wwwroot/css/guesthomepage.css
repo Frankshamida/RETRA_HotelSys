@@ -809,3 +809,447 @@ footer {
 
     /* You might want to add a mobile menu toggle button */
 }
+
+
+/* Main Layout */
+.guest-homepage-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.guest-sidebar {
+    width: 280px;
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+}
+
+.sidebar-logo {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+    .sidebar-logo img {
+        max-height: 70px;
+    }
+
+.sidebar-menu {
+    flex: 1;
+    padding: 20px 0;
+}
+
+    .sidebar-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar-menu li {
+        margin: 5px 0;
+    }
+
+    .sidebar-menu a {
+        display: flex;
+        align-items: center;
+        padding: 12px 20px;
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .sidebar-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .sidebar-menu a i {
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+
+    .sidebar-menu .active a {
+        background-color: rgba(212, 175, 55, 0.2);
+        color: white;
+        border-left: 3px solid var(--gold-accent);
+    }
+
+/* Profile Section */
+.sidebar-profile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e74c3c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-name {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.profile-role {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.profile-logout a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+    .profile-logout a:hover {
+        color: var(--gold-accent);
+    }
+
+/* Main Content */
+.guest-main-content {
+    flex: 1;
+    margin-left: 280px;
+    padding: 30px;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(44, 62, 80, 0.1));
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 4px solid var(--gold-accent);
+}
+
+    .welcome-banner h1 {
+        color: var(--primary-color);
+        margin-bottom: 10px;
+    }
+
+    .welcome-banner p {
+        color: #666;
+    }
+
+/* Quick View Rooms Section */
+.quick-view-rooms {
+    margin: 50px 0;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+    .section-header h2 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+
+    .section-header p {
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto 20px;
+    }
+
+.view-all-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+    .view-all-btn:hover {
+        background-color: #d4af37;
+        transform: translateY(-2px);
+    }
+
+.rooms-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.room-preview-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+    .room-preview-card:hover {
+        transform: translateY(-5px);
+    }
+
+.room-preview-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+    .room-preview-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+.room-preview-card:hover .room-preview-image img {
+    transform: scale(1.05);
+}
+
+.room-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(212, 175, 55, 0.9);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.room-preview-content {
+    padding: 20px;
+}
+
+    .room-preview-content h3 {
+        margin-bottom: 10px;
+        color: #2c3e50;
+    }
+
+.room-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+    .room-price span {
+        font-size: 0.9rem;
+        color: #777;
+        font-weight: 400;
+    }
+
+.room-description {
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid #2c3e50;
+    color: #2c3e50;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+    .btn-outline:hover {
+        background-color: #2c3e50;
+        color: white;
+    }
+
+/* Hotel Location Section */
+.hotel-location-section {
+    margin: 50px 0;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.map-container {
+    margin: 30px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.location-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.location-info h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.location-info p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+    .location-info p i {
+        margin-right: 10px;
+        color: #d4af37;
+        width: 20px;
+        text-align: center;
+    }
+
+.transportation-info h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.transportation-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .transportation-info ul li {
+        margin-bottom: 10px;
+        color: #555;
+    }
+
+        .transportation-info ul li i {
+            margin-right: 10px;
+            color: #d4af37;
+            width: 20px;
+            text-align: center;
+        }
+
+/* About Section */
+.about-section {
+    margin: 50px 0;
+}
+
+    .about-section h2 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 30px;
+    }
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: center;
+}
+
+.about-text p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-image {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+/* Modal Styles */
+.modal-content {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 9px 9px 0 0;
+}
+
+    .modal-header .close {
+        color: white;
+    }
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    border-top: 1px solid #eee;
+    padding: 15px 20px;
+}
+
+.form-control {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #d4af37;
+    border-color: #d4af37;
+}
+
+    .btn-primary:hover {
+        background-color: #c19b2e;
+        border-color: #c19b2e;
+    }
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .guest-sidebar {
+        width: 250px;
+    }
+
+    .guest-main-content {
+        margin-left: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .guest-sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .guest-main-content {
+        margin-left: 0;
+    }
+
+    .rooms-preview {
+        grid-template-columns: 1fr;
+    }
+}
+

@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>5p96pzj6dy</Fingerprint>
-      <Integrity>mUtylhEbriQ2i0vIjKdadWrLAS8u1kgZSqiODz1pfMs=</Integrity>
+      <Fingerprint>8oc3qsfcjh</Fingerprint>
+      <Integrity>6JwKG2L/Z4gIiFHBaHWxl1qpr9+LRN7rCj8+V0JOFTg=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\guesthomepage.css'))</OriginalItemSpec>
@@ -444,8 +444,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>jwxpjjem1c</Fingerprint>
-      <Integrity>HQlfncj13JGUP8j9qJYmXFMioebTcE0eIuPLq6JJkKA=</Integrity>
+      <Fingerprint>ixq2suy977</Fingerprint>
+      <Integrity>1igibE9IQTRBj2yPoqRrNa+x2Gpf92GJl91VayPcUUI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\guesthomepage.js'))</OriginalItemSpec>
@@ -1692,6 +1692,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\room-categories\5d258f76-c732-4e7f-9c7a-1d07a20cb5e3.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\room-categories\79593a58-bf0d-4b49-93a6-ed7ecb0c7f74.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>RETRA_HotelSys</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/RETRA_HotelSys</BasePath>
+      <RelativePath>uploads/room-categories/79593a58-bf0d-4b49-93a6-ed7ecb0c7f74.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>edeba094vt</Fingerprint>
+      <Integrity>fgiErK6ISfjHDV3m1ctN8wxG36ObVsEv/qwhaplR0xs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\room-categories\79593a58-bf0d-4b49-93a6-ed7ecb0c7f74.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\room-categories\850f35ba-8187-4cfa-a09e-e86e546fc462.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>RETRA_HotelSys</SourceId>
@@ -1800,6 +1818,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\room-categories\c916f289-2cd7-4b03-af3a-8e958b91a884.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\room-categories\d84158d5-a3a7-4f10-9cae-61cb97291c12.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>RETRA_HotelSys</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/RETRA_HotelSys</BasePath>
+      <RelativePath>uploads/room-categories/d84158d5-a3a7-4f10-9cae-61cb97291c12.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>bb5abqputd</Fingerprint>
+      <Integrity>Z9ya+sfl3kdpeJSQLUcfoqY44xSMKM+Hso4B/abu48g=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\room-categories\d84158d5-a3a7-4f10-9cae-61cb97291c12.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\room-categories\d8a3db1d-f1a1-443d-b748-b5993b2dd312.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>RETRA_HotelSys</SourceId>
@@ -1853,6 +1889,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\room-categories\e684ad98-2900-409a-901b-931dd0b149e2.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\room-categories\ec784eab-29bd-4dd0-9b67-dc09e5bb55c3.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>RETRA_HotelSys</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/RETRA_HotelSys</BasePath>
+      <RelativePath>uploads/room-categories/ec784eab-29bd-4dd0-9b67-dc09e5bb55c3.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>edeba094vt</Fingerprint>
+      <Integrity>fgiErK6ISfjHDV3m1ctN8wxG36ObVsEv/qwhaplR0xs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\room-categories\ec784eab-29bd-4dd0-9b67-dc09e5bb55c3.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

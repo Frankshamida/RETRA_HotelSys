@@ -70,3 +70,32 @@
         });
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+if (performance.navigation.type === 2) {
+    // This page was loaded from cache (back button)
+    location.reload(true); // Force reload from server
+}
+
+
+$(document).ready(function () {
+    $('#changePasswordForm').submit(function (e) {
+        e.preventDefault();
+
+        var newPassword = $('#newPassword').val();
+        var confirmPassword = $('#confirmPassword').val();
+
+        if (newPassword !== confirmPassword) {
+            alert('New password and confirmation do not match!');
+            return false;
+        }
+
+        if (newPassword.length < 6) {
+            alert('Password must be at least 6 characters long!');
+            return false;
+        }
+
+        // If validation passes, submit the form
+        this.submit();
+    });
+});

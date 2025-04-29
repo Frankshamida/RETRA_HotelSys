@@ -23,7 +23,7 @@ namespace RETRA_HotelSys.Data
         [StringLength(50)]
         public string TransactionId { get; set; }
 
-        public string? PaymentReference { get; set; }
+        public string PaymentReference { get; set; }
 
         [StringLength(50)]
         public string Status { get; set; } = "Completed";
@@ -35,10 +35,10 @@ namespace RETRA_HotelSys.Data
         public decimal RefundAmount { get; set; } = 0;
 
         public DateTime? RefundDate { get; set; }
-        public string? Notes { get; set; }
+        public string Notes { get; set; }
 
         // Navigation properties
         public virtual GuestReservations Reservation { get; set; }
-        public virtual StaffMembers? ProcessedByStaff { get; set; }
+        public virtual StaffMembers ProcessedByStaff { get; set; }
     }
 }

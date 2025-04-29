@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RETRA_HotelSys")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38310c4803cfe7390df967b2aff03a9394e40001")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("RETRA_HotelSys")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RETRA_HotelSys")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

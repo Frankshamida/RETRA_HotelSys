@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Hosting;
 using RoomTypeFeatures = RETRA_HotelSys.Data.RoomTypeFeatures;
 using RETRA_HotelSys.Models.ReservationManagement;
 using RETRA_HotelSys.Models.Guest;
+using Microsoft.Data.SqlClient;
 
 [Authorize(Policy = "AdminOnly")]
 [Route("Admin")] // Set base route for all actions
@@ -1563,6 +1564,17 @@ public class AdminController : Controller
             // Remove AvailableRooms from validation
             ModelState.Remove("AvailableRooms");
 
+            // Validate required fields
+            if (string.IsNullOrWhiteSpace(model.GuestEmail))
+            {
+                ModelState.AddModelError("GuestEmail", "Guest email is required");
+            }
+
+            if (string.IsNullOrWhiteSpace(model.GuestPhone))
+            {
+                ModelState.AddModelError("GuestPhone", "Guest phone is required");
+            }
+
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -1631,10 +1643,13 @@ public class AdminController : Controller
             var stayDuration = (model.CheckOutDate - model.CheckInDate).Days;
             var totalAmount = room.BasePrice * stayDuration;
 
-            // Create reservation
+            // Create reservation - ensure ALL required fields are set
             var reservation = new RETRA_HotelSys.Data.GuestReservations
             {
                 GuestId = guest.Id,
+                GuestEmail = model.GuestEmail,
+                GuestName = $"{model.GuestFirstName} {model.GuestLastName}",
+                GuestPhone = model.GuestPhone, // Ensure phone is set
                 RoomId = model.RoomId,
                 CheckInDate = model.CheckInDate,
                 CheckOutDate = model.CheckOutDate,
@@ -1661,27 +1676,79 @@ public class AdminController : Controller
                 IsSystemGenerated = true
             });
 
+            // Create payment record if payment was made
+            if (model.PaymentAmount > 0)
+            {
+                var payment = new ReservationPayments
+                {
+                    ReservationId = reservation.ReservationId,
+                    Amount = model.PaymentAmount,
+                    PaymentDate = DateTime.UtcNow,
+                    PaymentMethod = model.PaymentMethod,
+                    TransactionId = model.TransactionReference,
+                    Status = "Completed",
+                    Notes = model.PaymentNotes
+                };
+
+                _context.ReservationPayments.Add(payment);
+
+                // Update reservation payment status
+                if (model.PaymentAmount >= totalAmount)
+                {
+                    reservation.PaymentStatus = "Paid";
+                }
+                else if (model.PaymentAmount > 0)
+                {
+                    reservation.PaymentStatus = "Partial";
+                }
+            }
+
             // Update room availability if confirmed
             if (model.BookingStatus == "Confirmed")
             {
                 room.IsAvailable = false;
-                await _context.SaveChangesAsync();
             }
 
-            TempData["SuccessMessage"] = $"Walk-in reservation created successfully! Guest ID: {guest.Id}";
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = $"Walk-in reservation created successfully!";
             return RedirectToAction("Reservations");
+        }
+        catch (DbUpdateException dbEx)
+        {
+            _logger.LogError(dbEx, "Database error creating walk-in reservation");
+
+            // Check for specific constraint violations
+            if (dbEx.InnerException is SqlException sqlEx)
+            {
+                if (sqlEx.Message.Contains("GuestPhone"))
+                {
+                    ModelState.AddModelError("GuestPhone", "Guest phone is required");
+                }
+                else if (sqlEx.Message.Contains("GuestEmail"))
+                {
+                    ModelState.AddModelError("GuestEmail", "Guest email is required");
+                }
+                else if (sqlEx.Message.Contains("GuestName"))
+                {
+                    ModelState.AddModelError("", "Guest name is required");
+                }
+            }
+
+            TempData["ErrorMessage"] = "Please check all required fields.";
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error creating walk-in reservation");
-            TempData["ErrorMessage"] = "Error creating walk-in reservation";
-
-            model.AvailableRooms = await _context.HotelRooms
-                .Where(r => r.IsAvailable)
-                .ToListAsync();
-
-            return View(model);
+            TempData["ErrorMessage"] = "An unexpected error occurred";
         }
+
+        // Reload available rooms for the view
+        model.AvailableRooms = await _context.HotelRooms
+            .Where(r => r.IsAvailable)
+            .ToListAsync();
+
+        return View(model);
     }
 
 

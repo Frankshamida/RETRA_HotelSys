@@ -47,5 +47,20 @@ namespace RETRA_HotelSys.Models.Guest
 
         public decimal TotalAmount { get; set; }
 
+
+        [Required]
+        [Display(Name = "Payment Method")]
+        public string PaymentMethod { get; set; }
+
+        [Display(Name = "Transaction Reference")]
+        public string TransactionReference { get; set; }
+
+        [Display(Name = "Payment Amount")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Amount must be greater than 0")]
+        public decimal PaymentAmount { get; set; }
+
+        [Display(Name = "Payment Notes")]
+        public string PaymentNotes { get; set; }
     }
 }
+

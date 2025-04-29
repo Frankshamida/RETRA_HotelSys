@@ -33,16 +33,16 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="GuestEmail" class="control-label"></label>
-                        <input asp-for="GuestEmail" class="form-control" type="email" required />
-                        <span asp-validation-for="GuestEmail" class="text-danger"></span>
+                        <label asp-for="GuestPhone" class="control-label"></label>
+                        <input asp-for="GuestPhone" class="form-control" required />
+                        <span asp-validation-for="GuestPhone" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="GuestPhone" class="control-label"></label>
-                        <input asp-for="GuestPhone" class="form-control" required />
-                        <span asp-validation-for="GuestPhone" class="text-danger"></span>
+                        <label asp-for="GuestEmail" class="control-label"></label>
+                        <input asp-for="GuestEmail" class="form-control" type="email" required />
+                        <span asp-validation-for="GuestEmail" class="text-danger"></span>
                     </div>
                 </div>
             </div>
@@ -121,6 +121,50 @@
                 <input type="hidden" asp-for="TotalAmount" id="totalAmount" />
             </div>
 
+            <hr class="my-4" />
+            <h5 class="mb-3">Payment Information</h5>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="PaymentMethod" class="control-label"></label>
+                        <select asp-for="PaymentMethod" class="form-control">
+                            <option value="">-- Select Payment Method --</option>
+                            <option value="Cash">Cash</option>
+                            <option value="Credit Card">Credit Card</option>
+                            <option value="Debit Card">Debit Card</option>
+                            <option value="Bank Transfer">Bank Transfer</option>
+                            <option value="Mobile Payment">Mobile Payment</option>
+                        </select>
+                        <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="PaymentAmount" class="control-label"></label>
+                        <input asp-for="PaymentAmount" class="form-control" type="number" step="0.01" min="0" />
+                        <span asp-validation-for="PaymentAmount" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="TransactionReference" class="control-label"></label>
+                        <input asp-for="TransactionReference" class="form-control" />
+                        <span asp-validation-for="TransactionReference" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="PaymentNotes" class="control-label"></label>
+                        <input asp-for="PaymentNotes" class="form-control" />
+                        <span asp-validation-for="PaymentNotes" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">
                     <i class="fas fa-save"></i> Create Reservation
@@ -155,6 +199,11 @@
 
                     $('#displayTotal').val('$' + total);
                     $('#totalAmount').val(total);
+
+                    // Set payment amount to total by default
+                    if ($('#PaymentAmount').val() === '') {
+                        $('#PaymentAmount').val(total);
+                    }
                 } else {
                     $('#displayTotal').val('');
                     $('#totalAmount').val('');
